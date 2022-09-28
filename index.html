@@ -20,8 +20,34 @@
           <p class="lead">See the value of crypto Currency transformed into any other world Currency.</p>
         </div>
       </div>
-
+      <main>
+        <div class="container col-12"> 
+            <div class="row justify-content-md-center align-items-center">
+                <div class="col col-lg-2 country-from">
+                    <label id="fromLabel" class="fromLabel">FROM</label>
+                    <select id="countryFromOption" class="" name="countryFromOption">
+                      <option id="countrySelection" class="countrySelection">Country From Here</option>
+                    </select>
+                    <input type="number" id="amountCountryFrom" class="amountCountryFrom" placeholder="Enter the amount you would like to convert"></textarea>
+                    <button id="btnStartOver" class="btnStartOver" type="button">Start Over</button>  
+                </div>
+                <div class="col-md-auto arrow">
+                    <i class="bi bi-arrow-right">ARRROW HERE ====)</i>
+                </div>
+                <div class="col col-lg-2 country-from">
+                    <select id="countryToOption" class="" name="countryToOption">
+                        <option id="countryFromSelection" class="countryFromSelection">Country To Here</option>
+                      </select>
+                    <textarea id="result" class="result" placeholder="Result goes here"></textarea>
+                    <button id="btnConvert" class="btnConvert" type="button">Convert</button>
+                </div>
+            </div>
+        </div>        
+    </main>
     
-    <script href="./assets/js/script.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
 </html>
