@@ -1,9 +1,9 @@
 //Global Variables
 var amountCountryFrom = document.body.querySelector(".amountCountryFrom");  //Variable holding the input amount to be converted
-var countrySelection = document.body.querySelector("countrySelection");  //Variable to select country
-var conversionAmount  = document.body.querySelector("conversionAmount");
-var btnConvert = document.body.querySelector("btnConvert");
-var btnStartOver = document.body.querySelector("btnStartOver");
+var countrySelection = document.body.querySelector(".countrySelection");  //Variable to select country
+var conversionAmount  = document.body.querySelector(".conversionAmount");
+var btnConvert = document.body.querySelector(".btnConvert");
+var btnStartOver = document.body.querySelector(".btnStartOver");
 var messageHandler = document.body.querySelector("#messageHandler");
 
 //here we write the fucntion to convert from
@@ -41,7 +41,7 @@ btnConvert.addEventListener("click", function(event) {
         localStorage.setItem("countryFrom", countryFrom);
         conversion();
     }
-
+});
 
 var goldApiUrl = "https://www.goldapi.io/api/XAU/USD";
 
