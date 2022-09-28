@@ -1,3 +1,33 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+body {
+    margin: 20px;
+}
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h1 {
+    font-size: 36pt;
+}
+
+.container {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+  }
+  
+  button {
+    width: auto;
+  }
+
+  .country-from {
+    flex-direction: column;
+    vertical-align: middle;
+  }
 .bg{ 
     background-image: url(https://w0.peakpx.com/wallpaper/63/461/HD-wallpaper-gold-bars-value-bars-currency-gold.jpg);
     background-repeat: no-repeat;
