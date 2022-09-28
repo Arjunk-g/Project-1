@@ -1,0 +1,30 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+body {
+    margin: 20px;
+}
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h1 {
+    font-size: 36pt;
+}
+
+.container {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+  }
+  
+  button {
+    width: auto;
+  }
+
+  .country-from {
+    flex-direction: column;
+    vertical-align: middle;
+  }
