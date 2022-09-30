@@ -24,29 +24,32 @@ function handleErrors (type, theMessage) {  //param of message type
 }
 
 //Creating an event listener for the Convert button
-btnConvert.addEventListener("click", function(event) {
-    event.preventDefault(); //Added to keep persisitence on input
+// btnConvert.addEventListener("click", function(event) {
+//     event.preventDefault(); //Added to keep persistence on input
 
-    //Amount to be converted entered here
-    var amount = document.querySelector("#amountCountryFrom").value;
-    //select the country from conversion
-    var countryFrom = document.querySelector("countrySelection");
-    if (amount === "") {
-        handleErrors("error", "Enter Amount Needs Input");
-    } else if (amount === 'string') {
-        handleErrors("error", "Enter a Number");
-    } else {
-        handleErrors("success");
-        localStorage.setItem("amount", amount);
-        localStorage.setItem("countryFrom", countryFrom);
-        conversion();
-    }
-});
+//     //Amount to be converted entered here
+//     var amount = document.querySelector("#amountCountryFrom").value;
+//     //select the country from conversion
+//     var countryFrom = document.querySelector("countrySelection");
+//     if (amount === "") {
+//         handleErrors("error", "Enter Amount Needs Input");
+//     } else if (amount === 'string') {
+//         handleErrors("error", "Enter a Number");
+//     } else {
+//         handleErrors("success");
+//         localStorage.setItem("amount", amount);
+//         localStorage.setItem("countryFrom", countryFrom);
+//         conversion();
+//     }
+// });
 
-function getGoldApi() {
-    var goldApiUrl = "https://www.goldapi.io/api/XAU/USD";
+function getGoldApi(from, to, amount) {
+    var amountCountry = document.getElementById("amountCountryFrom");
+    var goldApiUrl = "https://www.goldapi.io/api/" + from + "/" + to + "/";
     var myHeaders = new Headers();
+    var goldData;
 
+    //append access key
     myHeaders.append("x-access-token", "goldapi-1un118l8lqe0hm-io");
     myHeaders.append("Content-Type", "application/json");
     
@@ -56,11 +59,35 @@ function getGoldApi() {
         redirect: 'follow',
     })
     .then(function (response) {
-        console.log(response);
         return response.json();
     })
     .then(function (data) {
-        console.log(data)
+        //in 24k
+        console.log(amountCountryText);
+        if(amountCountryText === 24) {
+            goldData = data.price_gram_24k;
+        }
+        // goldData = data.price_gram_24k;
+        var goldConvert = goldData*amount;
+        //get result element
+        var resultText = document.getElementById("result");
+        //result text shown equals goldData x amountFrom
+        resultText.value = goldConvert;
     });
 }
-getGoldApi();
+
+function getGoldConversion() {
+    //
+    var goldFromOption = document.getElementById("countryFromOption");
+    var countryToOption = document.getElementById("countryToOption");
+    var amountCountry = document.getElementById("amountCountryFrom");
+
+    //
+    var goldFromText = goldFromOption.options[goldFromOption.selectedIndex].text;
+    var countryToText = countryToOption.options[countryToOption.selectedIndex].text;
+    var amountCountryText = amountCountry.value;
+
+    getGoldApi(goldFromText, countryToText, amountCountryText);
+}
+
+btnConvert.addEventListener("click", getGoldConversion);
