@@ -10,7 +10,7 @@ var currencyFrom = document.body.querySelector("#currencyFrom");
 var currencyTo  = document.body.querySelector("#currencyTo");
 var btnConvertBTC = document.body.querySelector("#btnConvertBTC");
 
-//here we write the fucntion to convert from
+//here we write the function to convert from
 function conversion () {
     
     //Call user input on amount to be converted
@@ -20,6 +20,7 @@ function conversion () {
     
     return 
 };
+
 
 
 
@@ -63,3 +64,26 @@ function convertCurrencyBTC() {
 }
 
 btnConvertBTC.addEventListener("click",convertCurrencyBTC);
+
+function getGoldApi() {
+    var goldApiUrl = "https://www.goldapi.io/api/XAU/USD";
+    var myHeaders = new Headers();
+
+    myHeaders.append("x-access-token", "goldapi-1un118l8lqe0hm-io");
+    myHeaders.append("Content-Type", "application/json");
+    
+    fetch(goldApiUrl, {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow',
+    })
+    .then(function (response) {
+        console.log(response);
+        return response.json();
+    })
+    .then(function (data) {
+        console.log(data)
+    });
+}
+getGoldApi();
+
