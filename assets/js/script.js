@@ -5,6 +5,10 @@ var conversionAmount  = document.body.querySelector(".conversionAmount");
 var btnConvert = document.body.querySelector(".btnConvert");
 var btnStartOver = document.body.querySelector(".btnStartOver");
 var messageHandler = document.body.querySelector("#messageHandler");
+var amountBTC = document.body.querySelector("#amountBTC");
+var currencyFrom = document.body.querySelector("#currencyFrom"); 
+var currencyTo  = document.body.querySelector("#currencyTo");
+var btnConvertBTC = document.body.querySelector("#btnConvertBTC");
 
 //here we write the function to convert from
 function conversion () {
@@ -17,31 +21,49 @@ function conversion () {
     return 
 };
 
-//This function handles errors
-function handleErrors (type, theMessage) {  //param of message type
-    messageHandler.textContent = theMessage;  //print message
-    messageHandler.setAttribute("class", type); //
+
+
+
+
+
+
+function getBTCConversionApi (to, from, amount) {
+    var BTCApiUrl = "https://rest.coinapi.io/v1/exchangerate/" + from + "/" + to + "/";
+
+var myHeaders = new Headers();
+myHeaders.append("X-CoinAPI-Key", "BBF13E38-D30A-4EEB-B578-98D0AAA17C71");
+
+myHeaders.append("Content-Type", "application/json");
+
+fetch(BTCApiUrl, {
+    method: 'GET',
+    headers: myHeaders,
+    redirect: 'follow'
+})
+.then(function (response) {
+    return response.json()
+})
+.then(function (data) {
+    var currencyConvert = amount * data.rate;
+    document.body.querySelector("#BTCresult").value = currencyConvert;
+    
+});
 }
 
-//Creating an event listener for the Convert button
-btnConvert.addEventListener("click", function(event) {
-    event.preventDefault(); //Added to keep persisitence on input
+function convertCurrencyBTC() {
+    var to = currencyTo.options[currencyTo.selectedIndex].text;
+    
 
-    //Amount to be converted entered here
-    var amount = document.querySelector("#amountCountryFrom").value;
-    //select the country from conversion
-    var countryFrom = document.querySelector("countrySelection");
-    if (amount === "") {
-        handleErrors("error", "Enter Amount Needs Input");
-    } else if (amount === 'string') {
-        handleErrors("error", "Enter a Number");
-    } else {
-        handleErrors("success");
-        localStorage.setItem("amount", amount);
-        localStorage.setItem("countryFrom", countryFrom);
-        conversion();
-    }
-});
+    var from = currencyFrom.options[currencyFrom.selectedIndex].text;
+    
+
+    var amount = amountBTC.value;
+
+    getBTCConversionApi(to, from, amount);
+
+}
+
+btnConvertBTC.addEventListener("click",convertCurrencyBTC);
 
 function getGoldApi() {
     var goldApiUrl = "https://www.goldapi.io/api/XAU/USD";
@@ -64,3 +86,4 @@ function getGoldApi() {
     });
 }
 getGoldApi();
+
