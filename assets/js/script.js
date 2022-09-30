@@ -85,10 +85,7 @@ function getGoldApi(from, to, amount) {
     })
     .then(function (data) {
         //in 24k
-        console.log(amountCountryText);
-        if(amountCountryText === 24) {
             goldData = data.price_gram_24k;
-        }
         // goldData = data.price_gram_24k;
         var goldConvert = goldData*amount;
         //get result element
