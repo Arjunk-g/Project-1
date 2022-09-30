@@ -28,14 +28,24 @@
             <div class="row justify-content-md-center align-items-center">
                 <div class="col col-lg-2 country-from">
                     <label id="fromLabel" class="fromLabel">FROM</label>
-                    <!--dropdown-->
-                    <select id="countryFromOption" class="" name="countryFromOption">
-                      <!--dropdown options-->
+                    <!--metal dropdown-->
+                    <select id="metalFromOption" class="" name="metalFromOption">
+                      <!--metal options-->
                         <option>XAU</option>
                         <option>XAG</option>
                     </select>
+                    <!--karat dropdown-->
+                    <label id="fromLabel" class="fromLabel">FROM</label>
+                    <select id="karatFrom" class="" name="karatFrom">
+                        <!--dropdown options-->
+                          <option>18k</option>
+                          <option>20k</option>
+                          <option>21k</option>
+                          <option>22k</option>
+                          <option>24k</option>
+                      </select>
                     <!--enter amount-->
-                    <input type="number" id="amountCountryFrom" class="amountCountryFrom" placeholder="Enter the amount you would like to convert">
+                    <input type="number" id="amountMetalFrom" class="amountMetalFrom" placeholder="Enter the amount you would like to convert">
                     <!--reset-->
                     <button id="btnStartOver" class="btnStartOver" type="button">Start Over</button>  
                 </div>
@@ -46,8 +56,9 @@
                 </div>
 
                 <div class="col col-lg-2 country-from">
+                    <label id="toLabel" class="toLabel">TO</label>
                     <!--dropdown-->
-                    <select id="countryToOption" class="" name="countryToOption">
+                    <select id="countryToOptionG" class="" name="countryToOptionG">
                         <!--dropdown options-->
                         <option>USD</option>
                         <option>EUR</option>
@@ -56,7 +67,7 @@
                     </select>
                     <!--result shown-->
                     <textarea id="result" class="result" placeholder="Result goes here"></textarea>
-                    <button id="btnConvert" class="btnConvert" type="button">Convert</button>
+                    <button id="btnConvertG" class="btnConvertG" type="button">Convert</button>
                 </div>
             </div>
         </div>
@@ -84,7 +95,9 @@
                     <i class="bi bi-arrow-right">ARRROW HERE ====)</i>
                 </div>
 
+                
                 <div class="col col-lg-2 country-from">
+                <label id="toLabel" class="toLabel">TO</label>
                     <select id="currencyTo">
                       <option>USD</option>
                       <option>EUR</option>
