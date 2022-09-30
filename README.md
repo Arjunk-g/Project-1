@@ -14,5 +14,3 @@ I don't like JavaScript (. _ . )
 -david Hall
 I think i'll like javaScript more when i can sit in fron of a blank js file, be told to do something, and then execute it! (^_^)
 
-
-test
