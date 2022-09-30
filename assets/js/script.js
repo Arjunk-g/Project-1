@@ -65,10 +65,13 @@ function convertCurrencyBTC() {
 
 btnConvertBTC.addEventListener("click",convertCurrencyBTC);
 
-function getGoldApi() {
-    var goldApiUrl = "https://www.goldapi.io/api/XAU/USD";
+function getGoldApi(from, to, amount) {
+    var amountCountry = document.getElementById("amountCountryFrom");
+    var goldApiUrl = "https://www.goldapi.io/api/" + from + "/" + to + "/";
     var myHeaders = new Headers();
+    var goldData;
 
+    //append access key
     myHeaders.append("x-access-token", "goldapi-1un118l8lqe0hm-io");
     myHeaders.append("Content-Type", "application/json");
     
@@ -78,12 +81,35 @@ function getGoldApi() {
         redirect: 'follow',
     })
     .then(function (response) {
-        console.log(response);
         return response.json();
     })
     .then(function (data) {
-        console.log(data)
+        //in 24k
+        console.log(amountCountryText);
+        if(amountCountryText === 24) {
+            goldData = data.price_gram_24k;
+        }
+        // goldData = data.price_gram_24k;
+        var goldConvert = goldData*amount;
+        //get result element
+        var resultText = document.getElementById("result");
+        //result text shown equals goldData x amountFrom
+        resultText.value = goldConvert;
     });
 }
-getGoldApi();
 
+function getGoldConversion() {
+    //
+    var goldFromOption = document.getElementById("countryFromOption");
+    var countryToOption = document.getElementById("countryToOption");
+    var amountCountry = document.getElementById("amountCountryFrom");
+
+    //
+    var goldFromText = goldFromOption.options[goldFromOption.selectedIndex].text;
+    var countryToText = countryToOption.options[countryToOption.selectedIndex].text;
+    var amountCountryText = amountCountry.value;
+
+    getGoldApi(goldFromText, countryToText, amountCountryText);
+}
+
+btnConvert.addEventListener("click", getGoldConversion);
