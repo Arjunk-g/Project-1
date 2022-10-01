@@ -71,15 +71,27 @@
             <h2 class="row justify-content-md-center align-items-center">Gold To Currency:</h2>
             <div class="row justify-content-md-center align-items-center pic">
                 <div class="col col-lg-2 country-from">
-                    <label id="fromLabel" class="fromLabel">Gold/Silver <span class="badge badge-secondary">XAU = Gold</span></h6></label>
-                    <!--dropdown-->
-                    <select id="countryFromOption" class="" name="countryFromOption">
-                      <!--dropdown options-->
+                    <label id="fromLabel" class="fromLabel">Metal</label>
+                    <!--metal dropdown-->
+                    <select id="metalFromOption" class="" name="metalFromOption">
+                      <!--metal options-->
                         <option>XAU</option>
                         <option>XAG</option>
+                        <option>XPT</option>
+                        <option>XPD</option>
                     </select>
+                    <!--karat dropdown-->
+                    <label id="fromLabel" class="fromLabel">FROM</label>
+                    <select id="karatFrom" class="" name="karatFrom">
+                        <!--dropdown options-->
+                          <option>18k</option>
+                          <option>20k</option>
+                          <option>21k</option>
+                          <option>22k</option>
+                          <option>24k</option>
+                      </select>
                     <!--enter amount-->
-                    <input type="number" id="amountCountryFrom" class="amountCountryFrom" placeholder="Amount in grams">
+                    <input type="number" id="amountMetalFrom" class="amountMetalFrom" placeholder="Amount in grams">
                     <!--reset-->
                     <button id="btnStartOver" class="btnStartOver" type="button">Clear</button>  
                 </div>
@@ -93,17 +105,22 @@
                 </div>
 
                 <div class="col col-lg-2 country-from">
+                    <label id="toLabel" class="toLabel">TO</label>
                     <!--dropdown-->
-                    <select id="countryToOption" class="" name="countryToOption">
+                    <select id="countryToOptionG" class="" name="countryToOptionG">
                         <!--dropdown options-->
                         <option>USD</option>
                         <option>EUR</option>
-                        <option>BTC</option>
+                        <option>JPY</option>
+                        <option>GBP</option>
                         <option>CAD</option>
+                        <option>KRW</option>
+                        <option>MXN</option>
+                        <option>BTC</option>
                     </select>
                     <!--result shown-->
                     <textarea id="result" class="result" placeholder="Result goes here"></textarea>
-                    <button id="btnConvert" class="btnConvert" type="button">Convert</button>
+                    <button id="btnConvertG" class="btnConvertG" type="button">Convert</button>
                 </div>
             </div>
         </div>
@@ -137,7 +154,9 @@
                       </svg>
                 </div>
 
+                
                 <div class="col col-lg-2 country-from">
+                <label id="toLabel" class="toLabel">TO</label>
                     <select id="currencyTo">
                       <option>USD</option>
                       <option>EUR</option>
