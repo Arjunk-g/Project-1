@@ -18,6 +18,12 @@ var amountBTC = document.body.querySelector("#amountBTC");
 var currencyFrom = document.body.querySelector("#currencyFrom"); 
 var currencyTo  = document.body.querySelector("#currencyTo");
 var btnConvertBTC = document.body.querySelector("#btnConvertBTC");
+var lsAmountBTC = localStorage.getItem("amountBTC");
+
+if(lsAmountBTC !== ""){
+    amountBTC.value = lsAmountBTC;
+}
+
 
 // ************************************** NDF - here we write the function to convert from *************** //
 function conversion(event) {
@@ -115,6 +121,8 @@ function convertCurrencyBTC() {
 
     var amount = amountBTC.value;
 
+    localStorage.setItem("amountBTC", amount)
+
     getBTCConversionApi(to, from, amount);
 
 }
@@ -166,3 +174,23 @@ function getGoldConversion() {
 }
 
 btnConvert.addEventListener("click", getGoldConversion);
+
+
+
+let btnClear = document.body.querySelector('.btnStartOver');
+let inputs = document.body.querySelector('.amountCountryFrom');
+
+btnClear.addEventListener('click', () => {
+    
+    inputs.value = "";
+});
+
+let btnClear1 = document.body.querySelector('#btnStartOver1');
+let inputs1 = document.body.querySelector('#amountBTC');
+
+btnClear1.addEventListener('click', () => {
+    localStorage.getItem("amountBTC")
+    inputs1.value = "";
+});
+
+
