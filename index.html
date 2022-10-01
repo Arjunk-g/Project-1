@@ -23,10 +23,10 @@
     </div>
     
     <!--Hyun's HTML [-->
-    <main class="pic">
-        <div class="container col-12"> 
-            <h1 class="row justify-content-md-center align-items-center ">Gold To Currency:</h1>
-            <div class="row justify-content-md-center align-items-center">
+    <main>
+        <div id="hyuns-form" class="container col-12"> 
+            <h2 class="row justify-content-md-center align-items-center">Gold To Currency:</h2>
+            <div class="row justify-content-md-center align-items-center pic">
                 <div class="col col-lg-2 country-from">
                     <label id="fromLabel" class="fromLabel">Gold/Silver <span class="badge badge-secondary">XAU = Gold</span></h6></label>
                     <!--dropdown-->
@@ -38,7 +38,7 @@
                     <!--enter amount-->
                     <input type="number" id="amountCountryFrom" class="amountCountryFrom" placeholder="Amount in grams">
                     <!--reset-->
-                    <button id="btnStartOver" class="btnStartOver" type="button" onclick="ClearFields();">Start Over</button>  
+                    <button id="btnStartOver" class="btnStartOver" type="button">Clear</button>  
                 </div>
                 
                 <!--arrow-->
@@ -70,10 +70,10 @@
     <!--David's HTML [-->
     <main>
         <!-- <h1 class="goldFont">Currency To Bitcoin<span class="badge badge-secondary"></span></h1> -->
-        <div class="container col-12"> 
-            <h1 class="row justify-content-md-center align-items-center">Currency To Bitcoin:</h1>
-            <div class="row justify-content-md-center align-items-center">
-                <div class="col col-lg-2 country-from">
+        <div id="davs-form" class="container col-12"> 
+            <h2 class="row justify-content-md-center align-items-center">Currency To Bitcoin:</h2>
+            <div  class="row justify-content-md-center align-items-center pic2">
+                <div  class="col col-lg-2 country-from">
                     <label id="fromLabel" class="fromLabel">FROM</label>
                     <select id="currencyFrom" class="" name="countryFromOption">
                       <option>USD</option>
@@ -81,8 +81,9 @@
                       <option>MXN</option>
                       <option>BTC</option>
                     </select>
-                    <input type="number" id="amountBTC" class="amountCountryFrom" placeholder="Enter the amount you would like to convert"></input>
-                    <button id="btnStartOver" class="btnStartOver" type="button" onclick="ClearFields();">Start Over</button>  
+                    <input type="number" id="amountBTC" class="amountCountryFrom" placeholder="Enter currency amount"></input>
+                    <button id="btnStartOver1" class="btnStartOver" type="button">Clear</button>
+
                 </div>
                 
                 <!--arrow-->
@@ -105,6 +106,12 @@
                 </div>
             </div>
         </div>
+
+
+
+
+<!-- add your converter boxes/divs above this save button and when everybody is all done delete this comment -->
+        <button id="saveBtn" class="saveBtn">Save Data</button>
     </main>
     <!--David's HTML ]-->
     
