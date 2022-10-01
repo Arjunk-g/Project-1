@@ -17,7 +17,7 @@
         <div class="container wordColor">
             <!--header-->
             <h1 class="display-4">Gold to Currency</h1>
-            <p class="lead">Convert 24k grams of gold into other world Currency.</p>
+            <p class="lead">Converting Gold and Bitcoin to various world currencies.</p>
         </div>
     </div>
     <main>
@@ -67,10 +67,11 @@
 
     <!--Hyun's HTML [-->
     <main>
-        <div class="container col-12"> 
-            <div class="row justify-content-md-center align-items-center">
+        <div id="hyuns-form" class="container col-12"> 
+            <h2 class="row justify-content-md-center align-items-center">Gold To Currency:</h2>
+            <div class="row justify-content-md-center align-items-center pic">
                 <div class="col col-lg-2 country-from">
-                    <label id="fromLabel" class="fromLabel">FROM</label>
+                    <label id="fromLabel" class="fromLabel">Gold/Silver <span class="badge badge-secondary">XAU = Gold</span></h6></label>
                     <!--dropdown-->
                     <select id="countryFromOption" class="" name="countryFromOption">
                       <!--dropdown options-->
@@ -78,14 +79,17 @@
                         <option>XAG</option>
                     </select>
                     <!--enter amount-->
-                    <input type="number" id="amountCountryFrom" class="amountCountryFrom" placeholder="Enter the amount you would like to convert">
+                    <input type="number" id="amountCountryFrom" class="amountCountryFrom" placeholder="Amount in grams">
                     <!--reset-->
-                    <button id="btnStartOver" class="btnStartOver" type="button">Start Over</button>  
+                    <button id="btnStartOver" class="btnStartOver" type="button">Clear</button>  
                 </div>
                 
                 <!--arrow-->
                 <div class="col-md-auto arrow">
-                    <i class="bi bi-arrow-right">ARRROW HERE ====)</i>
+                    <!-- code for arrow icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                      </svg> 
                 </div>
 
                 <div class="col col-lg-2 country-from">
@@ -108,9 +112,11 @@
     
     <!--David's HTML [-->
     <main>
-        <div class="container col-12"> 
-            <div class="row justify-content-md-center align-items-center">
-                <div class="col col-lg-2 country-from">
+        <!-- <h1 class="goldFont">Currency To Bitcoin<span class="badge badge-secondary"></span></h1> -->
+        <div id="davs-form" class="container col-12"> 
+            <h2 class="row justify-content-md-center align-items-center">Currency To Bitcoin:</h2>
+            <div  class="row justify-content-md-center align-items-center pic2">
+                <div  class="col col-lg-2 country-from">
                     <label id="fromLabel" class="fromLabel">FROM</label>
                     <select id="currencyFrom" class="" name="countryFromOption">
                       <option>USD</option>
@@ -118,13 +124,17 @@
                       <option>MXN</option>
                       <option>BTC</option>
                     </select>
-                    <input type="number" id="amountBTC" class="amountCountryFrom" placeholder="Enter the amount you would like to convert">
-                    <button id="btnStartOver" class="btnStartOver" type="button">Start Over</button>  
+                    <input type="number" id="amountBTC" class="amountCountryFrom" placeholder="Enter currency amount"></input>
+                    <button id="btnStartOver1" class="btnStartOver" type="button">Clear</button>
+
                 </div>
                 
                 <!--arrow-->
                 <div class="col-md-auto arrow">
-                    <i class="bi bi-arrow-right">ARRROW HERE ====)</i>
+                    <!-- code for arrow icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                      </svg>
                 </div>
 
                 <div class="col col-lg-2 country-from">
@@ -135,10 +145,16 @@
                       <option>BTC</option>
                       </select>
                     <textarea id="BTCresult" class="result" placeholder="Result goes here"></textarea>
-                    <button id="btnConvertBTC">Convert</button>
+                    <button id="btnConvertBTC" class="btnConvert">Convert</button>
                 </div>
             </div>
         </div>
+
+
+
+
+<!-- add your converter boxes/divs above this save button and when everybody is all done delete this comment -->
+        <button id="saveBtn" class="saveBtn">Save Data</button>
     </main>
     <!--David's HTML ]-->
     
