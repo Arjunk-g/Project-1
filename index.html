@@ -32,27 +32,35 @@
                     </div>
                     <div class="col col-lg-3 country-from">
                         <label id="fromLabel" class="fromlabel">FROM: </label>
-                        <select id="countryFrom" name="countryFrom">
-                            <option id="fromCurrency" class="fromCurrency">Currency Symbol</option>
+                        <select id="countryFromCurrency" name="countryFrom">
+                            <option class="fromCurrency">USD</option>
+                            <option class="fromCurrency">EUR</option>
+                            <option class="fromCurrency">GBP</option>
+                            <option class="fromCurrency">MXN</option>
+                            <option class="fromCurrency">JPY</option>
                         </select>
                     </div>
                     
                     <!-- COUNTRY TO SECTION -->
                     <div class="col col-lg-3 country-to">
                         <label id="toLabel" class="toLabel">TO: </label><br>
-                        <select id="to" class="" name="to">
-                            <option id="toCurrency" class="toCurrency">Currency Symbol</option>
+                        <select id="countryToCurrency" class="" name="to">                    
+                            <option class="toCurrency">USD</option>
+                            <option class="toCurrency">EUR</option>
+                            <option class="toCurrency">GBP</option>
+                            <option class="toCurrency">MXN</option>
+                            <option class="toCurrency">JPY</option>
                         </select>
                     </div>
                     <div class="col col-lg-3 country-to">
-                        <button id="btnConvert" class="btnConvert" type="button">Convert</button><br>
+                        <button id="btnConvert" class="btnConvert-ndf" type="button">Convert</button><br>
                         <output id="result" class="result" placeholder="Result goes here">RESULT: </output>
                     </div>
                 </form>
                         <!-- MESSAGE HANDLER -->
                 <div class="container-ndf-2 col-12 arrow justify-content-md-center align-items-center"> 
                     <div id="messageHandler" class="messageHandler">ERRORS DISPLAY HERE -MSG:</div>
-                </div> 
+                </div>
             </div>
         </div>  
     </main>         

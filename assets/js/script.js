@@ -1,12 +1,12 @@
 //Global Variables
 //NDF - vars
-var amount = document.querySelector(".amount");  //Variable holding the input amount to be converted
-var fromCurrency = document.querySelector(".fromCurrency");  //Variable to select currency we are converting from
-var toCurrency = document.querySelector(".toCurrency");
-var btnConvert = document.querySelector(".btnConvert"); //button to convert
-var result = document.querySelector(".result"); //final result
-var btnStartOver = document.querySelector(".btnStartOver"); //button to start over
-var messageHandler = document.querySelector(".messageHandler");  //error handler
+var amount = document.body.querySelector(".amount");  //Variable holding the input amount to be converted
+var fromCurrency = document.body.querySelector("#countryFromCurrency");  //Variable to select currency we are converting from
+var toCurrency = document.body.querySelector("#countryToCurrency");
+var btnConvert_ndf = document.body.querySelector(".btnConvert-ndf"); //button to convert
+var finalResult = document.body.querySelector(".result"); //final result
+var btnStartOver = document.body.querySelector(".btnStartOver"); //button to start over
+var messageHandler = document.body.querySelector(".messageHandler");  //error handler
 //david's vars
 var amountCountryFrom = document.body.querySelector(".amountCountryFrom");  //Variable holding the input amount to be converted
 var countrySelection = document.body.querySelector(".countrySelection");  //Variable to select country
@@ -19,57 +19,35 @@ var currencyFrom = document.body.querySelector("#currencyFrom");
 var currencyTo  = document.body.querySelector("#currencyTo");
 var btnConvertBTC = document.body.querySelector("#btnConvertBTC");
 
-
-//NDF - calling the functions
-conversion();
-getCountrySymbols();
-displayCurrencyCodesInOption();
-
 // ************************************** NDF - here we write the function to convert from *************** //
-function conversion (event) {
+function conversion(event) {
         var requestOptions;
-        //Nordleens Base + API Key
-        const apiKey = "https://api.exchangeratesapi.io/v1/latest?access_key=LyHhxrDd4ojK6I1EtKoQCyL4l9PXDLHM";
-
-        //API key - currency country to country
         var myHeaders = new Headers();
-        // myHeaders.append("apikey", "LyHhxrDd4ojK6I1EtKoQCyL4l9PXDLHM");   //key pair
+        myHeaders.append("apikey", "LyHhxrDd4ojK6I1EtKoQCyL4l9PXDLHM");   //key pair
         var requestOptions = {
-        method: 'GET',
-        redirect: 'follow',
-        headers: myHeaders
+            method: 'GET',
+            redirect: 'follow',
+            headers: myHeaders
         };
     //Input call - user input on amount to be converted
     var amount = localStorage.getItem("amount");
-    var fromCurrency = getCountrySymbols();
-    var toCurrency = getCountrySymbols();
-    var thisAmount = parseInt(amount);
+    var fromCurrency_ndf = fromCurrency.options[fromCurrency.selectedIndex].text;
+    var toCurrency_ndf = toCurrency.options[toCurrency.selectedIndex].text;
+    var thisAmount = amount;
+    console.log(fromCurrency_ndf, toCurrency_ndf, thisAmount);
+
     //original code from API below
     // fetch("https://api.apilayer.com/exchangerates_data/convert?to={to}&from={from}&amount={amount}", requestOptions)
-    fetch("https://api.apilayer.com/exchangerates_data/convert?to="+ toCurrency + "&from=" + fromCurrency + "&amount=" + thisAmount, requestOptions)
-        .then(response => response.json())
-        .then(result => console.log(result))
-        .catch(error => console.log('error', error));    
-};
-
-//This function supplies the symbols for the from and to currency values
-function getCountrySymbols() {
-    var myHeaders = new Headers();
-    myHeaders.append("apikey", "LyHhxrDd4ojK6I1EtKoQCyL4l9PXDLHM");
-
-    var requestOptions = {
-    method: 'GET',
-    redirect: 'follow',
-    headers: myHeaders
-    };
-
-    fetch("https://api.apilayer.com/exchangerates_data/symbols?access_key=LyHhxrDd4ojK6I1EtKoQCyL4l9PXDLHM", requestOptions)
-    .then(response => response.text())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
-    return requestOptions;
+    fetch("https://api.apilayer.com/exchangerates_data/convert?to="+ toCurrency_ndf + "&from=" + fromCurrency_ndf + "&amount=" + thisAmount, requestOptions)
+    // fetch("./assets/js/dummy.json")
+        .then(response => response.json())  //creates json object
+        .then(result => {
+            console.log(result.result);
+            finalResult.innerHTML = result.result;
+        })  //allows to use the JSON object data
+        .catch(error => console.log('error', error));  //try catch    
     
-}
+};
 
 //This function creates a list fragment of the country codes
 function displayCurrencyCodesInOption() {
@@ -85,29 +63,24 @@ select.append(fragment);
 }
 
 //Creating an event listener for the Convert button
-btnConvert.addEventListener("click", function(event) {
+btnConvert_ndf.addEventListener("click", function(event) {
 event.preventDefault(); //Added to keep persisitence on input
 
 //Amount to be converted entered here
     var amount = document.querySelector("#amount").value;
     
-//     //select the country from conversion
+  //select the country from conversion
     var countryFrom = document.querySelector("countrySelection");
     if (amount === "") {
-        handleErrors("error", "Enter Amount Needs Input");
+        // handleErrors("error", "Enter Amount Needs Input");
     } else {
-        handleErrors("success");
+        // handleErrors("success");
         localStorage.setItem("amount", amount);
         localStorage.setItem("fromCurrency", countryFrom);
         conversion();
     }
 });
-// ***************************************************************************************
-
-
-
-
-
+// END OF NORDLEENS CODE ***************************************************************************************
 
 
 function getBTCConversionApi (to, from, amount) {

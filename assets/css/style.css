@@ -1,59 +1,59 @@
 * {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-sizing: border-box;
 }
 body {
-    margin: 0px;
+  margin: 0px;
 }
 main {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 h1 {
-    font-size: 36pt;
+  font-size: 36pt;
 }
 
 .container-ndf {
-    display: flex;
-    gap: 0.5rem;
-    flex-direction: column;
-    border: solid black 1px;
-    padding: 5px;
-    margin: 10px;
-  }
-  .container-ndf-2 {
-    display: flex;
-    gap: 0.5rem;
-    flex-direction: column;
-    padding: 5px;
-    margin: 10px;
-  }
-  
-  button {
-    width: auto;
-  }
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  border: solid black 1px;
+  padding: 5px;
+  margin: 10px;
+}
+.container-ndf-2 {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  padding: 5px;
+  margin: 10px;
+}
 
-  #arrow-icon {
-    font-size: 60px;
-    width: 100px;
-    height: 100px;
-  }
+button {
+  width: auto;
+}
 
-  .country-from {
-    flex-direction: column;
-    vertical-align: middle;
-  }
+#arrow-icon {
+  font-size: 60px;
+  width: 100px;
+  height: 100px;
+}
+
+.country-from {
+  flex-direction: column;
+  vertical-align: middle;
+}
 .bg{ 
-    background-image: url(https://w0.peakpx.com/wallpaper/63/461/HD-wallpaper-gold-bars-value-bars-currency-gold.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+  background-image: url(https://w0.peakpx.com/wallpaper/63/461/HD-wallpaper-gold-bars-value-bars-currency-gold.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .wordColor {
-    color: white;
-    text-shadow: 2px 2px 1px black;
+  color: white;
+  text-shadow: 2px 2px 1px black;
 }
 
 
