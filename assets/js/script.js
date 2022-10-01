@@ -1,4 +1,5 @@
 //Global Variables
+
 //NDF - vars
 var amount = document.body.querySelector(".amount");  //Variable holding the input amount to be converted
 var fromCurrency = document.body.querySelector("#countryFromCurrency");  //Variable to select currency we are converting from
@@ -8,16 +9,22 @@ var finalResult = document.body.querySelector(".result"); //final result
 var btnStartOver = document.body.querySelector(".btnStartOver"); //button to start over
 var messageHandler = document.body.querySelector(".messageHandler");  //error handler
 //david's vars
-var amountCountryFrom = document.body.querySelector(".amountCountryFrom");  //Variable holding the input amount to be converted
 var countrySelection = document.body.querySelector(".countrySelection");  //Variable to select country
 var conversionAmount  = document.body.querySelector(".conversionAmount");
-var btnConvert = document.body.querySelector(".btnConvert");
-var btnStartOver = document.body.querySelector(".btnStartOver");
-var messageHandler = document.body.querySelector("#messageHandler");
+var btnConvertG = document.body.querySelector(".btnConvertG");
 var amountBTC = document.body.querySelector("#amountBTC");
 var currencyFrom = document.body.querySelector("#currencyFrom"); 
 var currencyTo  = document.body.querySelector("#currencyTo");
 var btnConvertBTC = document.body.querySelector("#btnConvertBTC");
+var lsAmountBTC = localStorage.getItem("amountBTC");
+///hyun's vars
+var amountMetalFrom = document.querySelector(".amountMetalFrom");
+//arjun's vars
+
+if(lsAmountBTC !== ""){
+    amountBTC.value = lsAmountBTC;
+}
+
 
 // ************************************** NDF - here we write the function to convert from *************** //
 function conversion(event) {
@@ -115,14 +122,16 @@ function convertCurrencyBTC() {
 
     var amount = amountBTC.value;
 
+    localStorage.setItem("amountBTC", amount)
+
     getBTCConversionApi(to, from, amount);
 
 }
 
 btnConvertBTC.addEventListener("click",convertCurrencyBTC);
 
-function getGoldApi(from, to, amount) {
-    var amountCountry = document.getElementById("amountCountryFrom");
+
+function getGoldApi(from, to, amount, metal) {
     var goldApiUrl = "https://www.goldapi.io/api/" + from + "/" + to + "/";
     var myHeaders = new Headers();
     var goldData;
@@ -140,29 +149,74 @@ function getGoldApi(from, to, amount) {
         return response.json();
     })
     .then(function (data) {
-        //in 24k
+        //conditional for karats
+        //if metal parameter equals the string of 18k (dropdown choice)
+        if(metal === "18k") {
+            //set goldData to the data call's price property
+            goldData = data.price_gram_18k;
+        }else if(metal === "20k") {
+            goldData = data.price_gram_20k;
+        }else if(metal === "21k") {
+            goldData = data.price_gram_21k;
+        }else if(metal === "22k") {
+            goldData = data.price_gram_22k;
+        }else if(metal === "24k") {
             goldData = data.price_gram_24k;
-        // goldData = data.price_gram_24k;
+        }
+
+        //goldConvert equals karats x amount in grams
         var goldConvert = goldData*amount;
         //get result element
         var resultText = document.getElementById("result");
-        //result text shown equals goldData x amountFrom
+        //if conversion equals 0,
+        if(goldConvert === 0) {
+            goldConvert = "Error: Not in Database";
+        }
+        //if currency parameter is NOT Bitcoin
+        if(to !== "BTC") {
+            //round to 2 decimal places
+            goldConvert = (Math.round(goldConvert*100)/100).toFixed(2);
+        }
+        //result text shown equals goldConvert
         resultText.value = goldConvert;
     });
 }
 
 function getGoldConversion() {
-    //
-    var goldFromOption = document.getElementById("countryFromOption");
-    var countryToOption = document.getElementById("countryToOption");
-    var amountCountry = document.getElementById("amountCountryFrom");
+    //make variable to get elements
+    var goldFromOption = document.getElementById("metalFromOption"); 
+    var countryToOption = document.getElementById("countryToOptionG");
+    var amountMetal = document.getElementById("amountMetalFrom");
+    var karatFrom = document.getElementById("karatFrom");
 
-    //
-    var goldFromText = goldFromOption.options[goldFromOption.selectedIndex].text;
+    //set text from grabbed elements
+    var goldFromText = goldFromOption.options[goldFromOption.selectedIndex].text; 
     var countryToText = countryToOption.options[countryToOption.selectedIndex].text;
-    var amountCountryText = amountCountry.value;
+    var amountMetalText = amountMetal.value;
+    var karatFromText = karatFrom.value;
 
-    getGoldApi(goldFromText, countryToText, amountCountryText);
+    //call getGoldApi with parameters (metal dropdown, currency dropdown, metal in grams, karat of metal)
+    getGoldApi(goldFromText, countryToText, amountMetalText, karatFromText); 
 }
 
-btnConvert.addEventListener("click", getGoldConversion);
+btnConvertG.addEventListener("click", getGoldConversion);
+
+
+
+let btnClear = document.body.querySelector('.btnStartOver');
+let inputs = document.body.querySelector('.amountMetalFrom');
+
+btnClear.addEventListener('click', () => {
+    
+    inputs.value = "";
+});
+
+let btnClear1 = document.body.querySelector('#btnStartOver1');
+let inputs1 = document.body.querySelector('#amountBTC');
+
+btnClear1.addEventListener('click', () => {
+    localStorage.getItem("amountBTC")
+    inputs1.value = "";
+});
+
+

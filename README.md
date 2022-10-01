@@ -22,6 +22,7 @@ The technologies used to build this website are:
 	5.	Press the convert button
 	6.	Observe result in the Result area
 
+
 ## List of Currency
 The following list was compiled using commonly used currencies in todays market:
 
@@ -68,6 +69,8 @@ The following list was compiled using commonly used currencies in todays market:
 [IBAN] (https://www.iban.com/currency-codes)
 
 [CoinBase]  (https://www.coinbase.com/)
+
+[GoldApi]  (https://www.goldapi.io/)
 
 [Exchange Rates] - (https://exchangeratesapi.io/)
 
