@@ -86,7 +86,9 @@ function getGoldApi(from, to, amount, metal) {
     })
     .then(function (data) {
         //conditional for karats
+        //if metal parameter equals the string of 18k (dropdown choice)
         if(metal === "18k") {
+            //set goldData to the data call's price property
             goldData = data.price_gram_18k;
         }else if(metal === "20k") {
             goldData = data.price_gram_20k;
@@ -102,10 +104,16 @@ function getGoldApi(from, to, amount, metal) {
         var goldConvert = goldData*amount;
         //get result element
         var resultText = document.getElementById("result");
-        //result text shown equals goldData x amountFrom
-        if(to !== "BTC") {
-            goldConvert = goldConvert.toFixed(2);
+        //if conversion equals 0,
+        if(goldConvert === 0) {
+            goldConvert = "Error: Not in Database";
         }
+        //if currency parameter is NOT Bitcoin
+        if(to !== "BTC") {
+            //round to 2 decimal places
+            goldConvert = (Math.round(goldConvert*100)/100).toFixed(2);
+        }
+        //result text shown equals goldConvert
         resultText.value = goldConvert;
     });
 }
