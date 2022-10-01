@@ -70,7 +70,7 @@ The following list was compiled using commonly used currencies in todays market:
 
 [CoinBase]  (https://www.coinbase.com/)
 
-[GoldApi]  (https://www.goldapi.io/)
+[GoldAPI]  (https://www.goldapi.io/)
 
 [Exchange Rates] - (https://exchangeratesapi.io/)
 
