@@ -167,7 +167,7 @@ function getGoldApi(from, to, amount, metal) {
         //goldConvert equals karats x amount in grams
         var goldConvert = goldData*amount;
         //get result element
-        var resultText = document.getElementById("result");
+        var resultText = document.getElementById("resultG");
         //if conversion equals 0,
         if(goldConvert === 0) {
             goldConvert = "Error: Not in Database";
