@@ -110,3 +110,5 @@ function getGoldConversion() {
 }
 
 btnConvert.addEventListener("click", getGoldConversion);
+
+

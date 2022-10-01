@@ -11,6 +11,6 @@ I kinda like java script because it makes me feel like a programmer but also idk
 wookie_feature
 I don't like JavaScript (. _ . )
 
--david Hall
+ -david Hall
 I think i'll like javaScript more when i can sit in fron of a blank js file, be told to do something, and then execute it! (^_^)
 
