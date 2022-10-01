@@ -1,45 +1,105 @@
 * {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-sizing: border-box;
 }
 body {
-    margin: 20px;
+  margin: 0px;
 }
 main {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 h1 {
-    font-size: 36pt;
+  font-size: 36pt;
 }
 
-.container {
-    display: flex;
-    gap: 0.5rem;
-    flex-direction: column;
-  }
-  
-  button {
-    width: auto;
-  }
+.container-ndf {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  border: solid black 1px;
+  padding: 5px;
+  margin: 10px;
+}
+.container-ndf-2 {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  padding: 5px;
+  margin: 10px;
+}
 
-  .country-from {
-    flex-direction: column;
-    vertical-align: middle;
-  }
+button {
+  width: auto;
+}
+
+#arrow-icon {
+  font-size: 60px;
+  width: 100px;
+  height: 100px;
+}
+
+.country-from {
+  flex-direction: column;
+  vertical-align: middle;
+}
 .bg{ 
-    background-image: url(https://w0.peakpx.com/wallpaper/63/461/HD-wallpaper-gold-bars-value-bars-currency-gold.jpg);
+  background-image: url(https://w0.peakpx.com/wallpaper/63/461/HD-wallpaper-gold-bars-value-bars-currency-gold.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.wordColor {
+  color: white;
+  text-shadow: 2px 2px 1px black;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+
+}
+
+
+
+.pic {
+    background-image: url(https://www.wallpaperbetter.com/wallpaper/318/957/187/gold-coin-widescreen-hd-1080P-wallpaper-middle-size.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div.pic {
+    padding: 20px;
+}
+
+div.pic2 {
+    padding: 20px;
+}
+
+.pic2 {
+    background-image: url(https://i0.wp.com/cdn.clickwallpapers.net/images/clickwallpapers-bitcoin-cryptocurrency-in-4k-img7.jpg?w=958&ssl=1);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
-.wordColor {
-    color: white;
-    text-shadow: 2px 2px 1px black;
+h2 {
+    color: goldenrod;
+    background-color: black;
+    margin-bottom: 0;
 }
 
+body  {
+    background-color: black;
 
-/*link to another picture wecould use
-/* https://www.wallpaperbetter.com/wallpaper/318/957/187/gold-coin-widescreen-hd-1080P-wallpaper-middle-size.jpg */
+}
+
+div {
+    color: goldenrod
+}
