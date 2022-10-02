@@ -195,9 +195,7 @@ function getGoldConversion() {
     //call getGoldApi with parameters (metal dropdown, currency dropdown, metal in grams, karat of metal)
     getGoldApi(goldFromText, countryToText, amountMetalText, karatFromText); 
 }
-
 btnConvertG.addEventListener("click", getGoldConversion);
-
 
 // David's clear button and local storage code.***************************************
 let btnClear1 = document.body.querySelector('#btnStartOver1');
