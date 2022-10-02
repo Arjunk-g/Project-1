@@ -36,7 +36,7 @@ function conversion(event) {
             redirect: 'follow',
             headers: myHeaders
         };
-    //Input call - user input on amount to be converted
+    
     var amount = localStorage.getItem("amount");
     var fromCurrency_ndf = fromCurrency.options[fromCurrency.selectedIndex].text;
     var toCurrency_ndf = toCurrency.options[toCurrency.selectedIndex].text;
@@ -90,6 +90,9 @@ event.preventDefault(); //Added to keep persisitence on input
 // END OF NORDLEENS CODE ***************************************************************************************
 
 
+
+// Start of David's Code*************************************************************************************************
+
 function getBTCConversionApi (to, from, amount) {
     var BTCApiUrl = "https://rest.coinapi.io/v1/exchangerate/" + from + "/" + to + "/";
 
@@ -129,6 +132,8 @@ function convertCurrencyBTC() {
 }
 
 btnConvertBTC.addEventListener("click",convertCurrencyBTC);
+
+// End of David's Code *********************************************************************
 
 
 function getGoldApi(from, to, amount, metal) {
