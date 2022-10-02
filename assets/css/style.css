@@ -5,6 +5,7 @@
 li a {
   display: block;
 }
+
 body {
   margin: 0px;
 }
@@ -15,6 +16,11 @@ main {
 
 h1 {
   font-size: 36pt;
+  text-align: center;
+}
+
+p{
+  text-align: center;
 }
 
 .container-ndf {
@@ -96,6 +102,7 @@ h2 {
     color: goldenrod;
     background-color: black;
     margin-bottom: 0;
+    
 }
 
 body  {
