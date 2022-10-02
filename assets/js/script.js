@@ -25,11 +25,6 @@ var amountMetal = document.getElementById("amountMetalFrom");
 var karatFrom = document.getElementById("karatFrom");
 //arjun's vars
 
-if(lsAmountBTC !== ""){
-    amountBTC.value = lsAmountBTC;
-}
-
-
 // ************************************** NDF - here we write the function to convert from *************** //
 function conversion(event) {
         var requestOptions;
