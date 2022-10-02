@@ -8,9 +8,9 @@ var btnConvert_ndf = document.body.querySelector(".btnConvert-ndf"); //button to
 var finalResult = document.body.querySelector(".result"); //final result
 var btnStartOver = document.body.querySelector(".btnStartOver"); //button to start over
 var messageHandler = document.body.querySelector(".messageHandler");  //error handler
-//david's vars
 var countrySelection = document.body.querySelector(".countrySelection");  //Variable to select country
 var conversionAmount  = document.body.querySelector(".conversionAmount");
+//david's vars
 var btnConvertG = document.body.querySelector(".btnConvertG");
 var amountBTC = document.body.querySelector("#amountBTC");
 var currencyFrom = document.body.querySelector("#currencyFrom"); 
