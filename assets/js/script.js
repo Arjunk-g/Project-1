@@ -11,14 +11,18 @@ var messageHandler = document.body.querySelector(".messageHandler");  //error ha
 //david's vars
 var countrySelection = document.body.querySelector(".countrySelection");  //Variable to select country
 var conversionAmount  = document.body.querySelector(".conversionAmount");
-var btnConvertG = document.body.querySelector(".btnConvertG");
 var amountBTC = document.body.querySelector("#amountBTC");
 var currencyFrom = document.body.querySelector("#currencyFrom"); 
 var currencyTo  = document.body.querySelector("#currencyTo");
 var btnConvertBTC = document.body.querySelector("#btnConvertBTC");
 var lsAmountBTC = localStorage.getItem("amountBTC");
 ///hyun's vars
+var btnConvertG = document.body.querySelector(".btnConvertG"); //make variables to grab elements
 var amountMetalFrom = document.querySelector(".amountMetalFrom");
+var goldFromOption = document.getElementById("metalFromOption"); 
+var countryToOption = document.getElementById("countryToOptionG");
+var amountMetal = document.getElementById("amountMetalFrom");
+var karatFrom = document.getElementById("karatFrom");
 //arjun's vars
 
 if(lsAmountBTC !== ""){
@@ -183,12 +187,6 @@ function getGoldApi(from, to, amount, metal) {
 }
 
 function getGoldConversion() {
-    //make variable to get elements
-    var goldFromOption = document.getElementById("metalFromOption"); 
-    var countryToOption = document.getElementById("countryToOptionG");
-    var amountMetal = document.getElementById("amountMetalFrom");
-    var karatFrom = document.getElementById("karatFrom");
-
     //set text from grabbed elements
     var goldFromText = goldFromOption.options[goldFromOption.selectedIndex].text; 
     var countryToText = countryToOption.options[countryToOption.selectedIndex].text;
