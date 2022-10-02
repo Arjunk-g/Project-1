@@ -35,12 +35,12 @@ function conversion(event) {
             redirect: 'follow',
             headers: myHeaders
         };
-    //Input call - user input on amount to be converted
+    
     var amount = localStorage.getItem("amount");
     var fromCurrency_ndf = fromCurrency.options[fromCurrency.selectedIndex].text;
     var toCurrency_ndf = toCurrency.options[toCurrency.selectedIndex].text;
     var thisAmount = amount;
-    console.log(fromCurrency_ndf, toCurrency_ndf, thisAmount);
+    // console.log(fromCurrency_ndf, toCurrency_ndf, thisAmount);
 
     //original code from API below
     // fetch("https://api.apilayer.com/exchangerates_data/convert?to={to}&from={from}&amount={amount}", requestOptions)
@@ -48,11 +48,10 @@ function conversion(event) {
     // fetch("./assets/js/dummy.json")
         .then(response => response.json())  //creates json object
         .then(result => {
-            console.log(result.result);
+            // console.log(result.result);
             finalResult.innerHTML = result.result;
         })  //allows to use the JSON object data
         .catch(error => console.log('error', error));  //try catch    
-    
 };
 
 //This function creates a list fragment of the country codes
@@ -60,7 +59,7 @@ function displayCurrencyCodesInOption() {
     var select = document.querySelector('select');
     var countryCodes = getCountrySymbols();
     var fragment = new DocumentFragment();
-    console.log(countryCodes);
+    // console.log(countryCodes);
     for (var ccCodes in countryCodes) {
         fragment += countryCodes.ccCodes + " ";
         var option = document.createElement('option');
@@ -88,6 +87,9 @@ event.preventDefault(); //Added to keep persisitence on input
 });
 // END OF NORDLEENS CODE ***************************************************************************************
 
+
+
+// Start of David's Code*************************************************************************************************
 
 function getBTCConversionApi (to, from, amount) {
     var BTCApiUrl = "https://rest.coinapi.io/v1/exchangerate/" + from + "/" + to + "/";
@@ -128,6 +130,8 @@ function convertCurrencyBTC() {
 }
 
 btnConvertBTC.addEventListener("click",convertCurrencyBTC);
+
+// End of David's Code *********************************************************************
 
 
 function getGoldApi(from, to, amount, metal) {
@@ -191,5 +195,17 @@ function getGoldConversion() {
     //call getGoldApi with parameters (metal dropdown, currency dropdown, metal in grams, karat of metal)
     getGoldApi(goldFromText, countryToText, amountMetalText, karatFromText); 
 }
-
 btnConvertG.addEventListener("click", getGoldConversion);
+
+// David's clear button and local storage code.***************************************
+let btnClear1 = document.body.querySelector('#btnStartOver1');
+let inputs1 = document.body.querySelector('#amountBTC');
+
+if(lsAmountBTC !== ""){
+    amountBTC.value = lsAmountBTC;
+}
+
+btnClear1.addEventListener('click', () => {
+    localStorage.removeItem("amountBTC");
+    inputs1.value = "";
+});
