@@ -193,24 +193,3 @@ function getGoldConversion() {
 }
 
 btnConvertG.addEventListener("click", getGoldConversion);
-
-
-
-let btnClearG = document.body.querySelector(".btnStartOverG");
-let inputGold = document.body.querySelector(".amountMetalFrom");
-let inputKarat = document.body.querySelector(".karatFrom");
-
-btnClearG.addEventListener('click', () => {
-    localStorage.getItem(".amountMetalFrom")
-    localStorage.getItem(".karatFrom")
-    inputKarat.value = "";
-    inputGold.value = "";
-});
-
-let btnClear1 = document.body.querySelector('#btnStartOver1');
-let inputs1 = document.body.querySelector('#amountBTC');
-
-btnClear1.addEventListener('click', () => {
-    localStorage.getItem("amountBTC")
-    inputs1.value = "";
-});
