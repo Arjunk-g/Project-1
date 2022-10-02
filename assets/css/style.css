@@ -60,3 +60,51 @@ button {
   color: white;
   text-shadow: 2px 2px 1px black;
 }
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+
+}
+
+
+
+.pic {
+    background-image: url(https://www.wallpaperbetter.com/wallpaper/318/957/187/gold-coin-widescreen-hd-1080P-wallpaper-middle-size.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div.pic {
+    padding: 20px;
+}
+
+div.pic2 {
+    padding: 20px;
+}
+
+.pic2 {
+    background-image: url(https://i0.wp.com/cdn.clickwallpapers.net/images/clickwallpapers-bitcoin-cryptocurrency-in-4k-img7.jpg?w=958&ssl=1);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+h2 {
+    color: goldenrod;
+    background-color: black;
+    margin-bottom: 0;
+}
+
+body  {
+    background-color: black;
+
+}
+
+div {
+    color: goldenrod
+}

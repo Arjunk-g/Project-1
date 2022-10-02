@@ -10,5 +10,9 @@ git .bg{
 }
 
 
-/*link to another picture we could use
-/* https://www.wallpaperbetter.com/wallpaper/318/957/187/gold-coin-widescreen-hd-1080P-wallpaper-middle-size.jpg */
+
+.pic { 
+    background-image: url(https://www.wallpaperbetter.com/wallpaper/318/957/187/gold-coin-widescreen-hd-1080P-wallpaper-middle-size.jpg);
+    background-repeat: no-repeat; 
+
+}
