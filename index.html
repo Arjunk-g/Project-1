@@ -22,16 +22,16 @@
     </div>
     <!--NDF's HTML [-->
     <main>
-        <div class="container-ndf col-12"> 
+        <div class="container-ndf"> 
             <h2 class="row justify-content-md-center align-items-center">Convert Currency to Currency</h2>
-            <div class="row justify-content-md-center align-items-center bg4">
+            <div class="row justify-content-md-center align-items-center pic4">
                 <form class="row justify-content-md-center align-items-center">
                     <!-- COUNTRY FROM SECTION -->
-                    <div class="col col-lg-3 currency-value">
+                    <div class="currency-value">
                         <label id="valueLabel" class="valueLabel">VALUE: </label>
                         <input type="number" id="amount" class="amount" placeholder="Enter Your Value" />
                     </div>
-                    <div class="col col-lg-3 country-from">
+                    <div class="country-from">
                         <label id="fromLabel" class="fromlabel">FROM: </label>
                         <select id="countryFromCurrency" name="countryFrom">
                             <option class="fromCurrency">USD</option>
@@ -43,7 +43,7 @@
                     </div>
                     
                     <!-- COUNTRY TO SECTION -->
-                    <div class="col col-lg-3 country-to">
+                    <div class="country-to">
                         <label id="toLabel" class="toLabel">TO: </label><br>
                         <select id="countryToCurrency" class="" name="to">                    
                             <option class="toCurrency">USD</option>
@@ -53,7 +53,7 @@
                             <option class="toCurrency">JPY</option>
                         </select>
                     </div>
-                    <div class="col col-lg-3 country-to">
+                    <div class="convert-to">
                         <button id="btnConvert-ndf" class="btnConvert-ndf" type="button">Convert</button><br>
                         <output id="result" class="result" placeholder="Result goes here">RESULT: </output>
                     </div>
