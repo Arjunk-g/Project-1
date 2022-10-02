@@ -2,8 +2,8 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   box-sizing: border-box;
 }
-li a {
-  display: block;
+li {
+  
 }
 
 body {
@@ -25,18 +25,39 @@ p{
 
 .container-ndf {
   display: flex;
+  justify-content:space-around;
   gap: 0.5rem;
   flex-direction: column;
   border: solid black 1px;
-  padding: 5px;
-  margin: 10px;
+  padding: 15px;
+  width: 100%;
 }
+.container-ndf .currency-value {
+  width: 25%;
+}
+.container-ndf .country-from {
+  width: 25%;
+}
+.container-ndf .country-to {
+  width: 25%;
+}
+.container-ndf .convert-to {
+  width: 25%;
+}
+
 .container-ndf-2 {
   display: flex;
   gap: 0.5rem;
   flex-direction: column;
   padding: 5px;
   margin: 10px;
+  align-items: flex-start;
+}
+.pic4 {
+  background-image: url(https://miro.medium.com/max/720/1*vS9rr8ROCubVVnOdLE6ERA.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 button {
