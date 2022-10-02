@@ -29,6 +29,11 @@ h1 {
   padding: 5px;
   margin: 10px;
 }
+.bg4 {
+  background-image: url(https://www.investopedia.com/thmb/fic_YKW7dgK9KaRFIRYmHHIce5Y=/2121x1414/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1051617040-cdde96402fd6444a8547018d06b18ff6.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 button {
   width: auto;
@@ -55,7 +60,3 @@ button {
   color: white;
   text-shadow: 2px 2px 1px black;
 }
-
-
-/*link to another picture wecould use
-/* https://www.wallpaperbetter.com/wallpaper/318/957/187/gold-coin-widescreen-hd-1080P-wallpaper-middle-size.jpg */

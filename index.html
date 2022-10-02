@@ -20,10 +20,11 @@
             <p class="lead">Convert 24k grams of gold into other world Currency.</p>
         </div>
     </div>
+    <!-- ****************** NORDLEEN'S CODE ****************************************************************  -->
     <main>
         <div class="container-ndf col-12"> 
             <h2 class="row justify-content-md-center align-items-center">Convert Currency to Currency</h2>
-            <div class="row justify-content-md-center align-items-center">
+            <div class="row justify-content-md-center align-items-center pic4">
                 <form class="row justify-content-md-center align-items-center">
                     <!-- COUNTRY FROM SECTION -->
                     <div class="col col-lg-3 currency-value">
@@ -63,7 +64,17 @@
                 </div>
             </div>
         </div>  
+        <!-- LIST ITEMS FOR CONVERSION HISTORY -->
+        <div id="listOfConversions" class="listOfConversions">
+            <form id="addItemsToList" method="POST">
+                <label for="conversionList">Your Recent Conversions</label>
+                <input type="text" placeholder="Recent Conversions" name="myConversionsList" id="convListItems" />
+            </form>
+            <p> My Recent Conversions: <span id="countList">0</span></p>
+            <ul id="addToList"></ul>
+        </div>
     </main>         
+    <!-- ****************** END NORDLEEN'S CODE ****************************************************************  -->
 
     <!--Hyun's HTML [-->
     <main>
