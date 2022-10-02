@@ -23,9 +23,8 @@ var lsAmountBTC = localStorage.getItem("amountBTC");
 var amountMetalFrom = document.querySelector(".amountMetalFrom");
 //arjun's vars
 var conversionButtonAG = document.body.querySelector(".conversionButtonAG");
-
-var lsAmountAG = localStorage.getItem("amountAG");
-
+var currencyFromAG = document.body.querySelector("#currencyFromAG"); 
+var currencyToAG  = document.body.querySelector("#currencyToAG");
 
 if(lsAmountBTC !== ""){
     amountBTC.value = lsAmountBTC;
@@ -231,16 +230,34 @@ btnClear1.addEventListener('click', () => {
 
 // -----------------------------------------------------------------------TEST
 
-if(lsAmountAG !== ""){
-    amountAG.value = lsAmountAG;
-}
-
 function coinToMetalConvertAG (to, from, amount) {
-    var coinURLAG = "https://rest.coinapi.io/v1/exchangerate/" + from + "/" + to + "/";
+    var goldApiUrl = "https://www.goldapi.io/api/" + to + "/" + "USD" + "/";
+    var myHeaders = new Headers();
+    var metalData;
+
+    myHeaders.append("x-access-token", "goldapi-1un118l8lqe0hm-io");
+    myHeaders.append("Content-Type", "application/json");
+    
+    fetch(goldApiUrl, {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow',
+    })
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        console.log(data);
+        metalData = data.price;
+        //conditional for karats
+        //if metal parameter equals the string of 18k (dropdown choice)
+        });
+
+    var coinURLAG = "https://rest.coinapi.io/v1/exchangerate/" + from + "/" + 'USD' + "/";
 
 var myHeadersAG = new Headers();
 
-myHeadersAG.append("X-CoinAPI-Key", "BBF13E38-D30A-4EEB-B578-98D0AAA17C71");
+myHeadersAG.append("X-CoinAPI-Key", "06FA578A-BD51-4D62-8BE1-3950D9693466");
 myHeadersAG.append("Content-Type", "application/json");
 
 fetch(coinURLAG, {
@@ -252,15 +269,16 @@ fetch(coinURLAG, {
 return response.json()
 })
 .then(function (data) {
-var currencyConvertAG = amount * data.rate;
+console.log(data);
+var currencyConvertAG = (data.rate * amount) / metalData;
 document.body.querySelector("#coinURLAG").value = currencyConvertAG;   
 });
 }
 
 function conversionFunctionAG() {
-                    var to = currencyTo.options[currencyTo.selectedIndex].text;
-                    var from = currencyFrom.options[currencyFrom.selectedIndex].text;
-                    var amount = amountAG.value;
+var to = currencyToAG.options[currencyToAG.selectedIndex].text;
+var from = currencyFromAG.options[currencyFromAG.selectedIndex].text;
+var amount = amountAG.value;
 
     localStorage.setItem("amountAG", amount)
     coinToMetalConvertAG(to, from, amount);
