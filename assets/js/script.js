@@ -40,7 +40,7 @@ function conversion(event) {
     var fromCurrency_ndf = fromCurrency.options[fromCurrency.selectedIndex].text;
     var toCurrency_ndf = toCurrency.options[toCurrency.selectedIndex].text;
     var thisAmount = amount;
-    console.log(fromCurrency_ndf, toCurrency_ndf, thisAmount);
+    // console.log(fromCurrency_ndf, toCurrency_ndf, thisAmount);
 
     //original code from API below
     // fetch("https://api.apilayer.com/exchangerates_data/convert?to={to}&from={from}&amount={amount}", requestOptions)
@@ -48,11 +48,10 @@ function conversion(event) {
     // fetch("./assets/js/dummy.json")
         .then(response => response.json())  //creates json object
         .then(result => {
-            console.log(result.result);
+            // console.log(result.result);
             finalResult.innerHTML = result.result;
         })  //allows to use the JSON object data
         .catch(error => console.log('error', error));  //try catch    
-    
 };
 
 //This function creates a list fragment of the country codes
@@ -60,7 +59,7 @@ function displayCurrencyCodesInOption() {
     var select = document.querySelector('select');
     var countryCodes = getCountrySymbols();
     var fragment = new DocumentFragment();
-    console.log(countryCodes);
+    // console.log(countryCodes);
     for (var ccCodes in countryCodes) {
         fragment += countryCodes.ccCodes + " ";
         var option = document.createElement('option');
