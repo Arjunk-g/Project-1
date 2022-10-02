@@ -69,7 +69,7 @@ function displayCurrencyCodesInOption() {
     for (var ccCodes in countryCodes) {
         fragment += countryCodes.ccCodes + " ";
         var option = document.createElement('option');
-}
+    }
 select.append(fragment);
 }
 
@@ -77,10 +77,10 @@ select.append(fragment);
 btnConvert_ndf.addEventListener("click", function(event) {
 event.preventDefault(); //Added to keep persisitence on input
 
-//Amount to be converted entered here
+    //Amount to be converted entered here
     var amount = document.querySelector("#amount").value;
     
-  //select the country from conversion
+    //select the country from conversion
     var countryFrom = document.querySelector("countrySelection");
     if (amount === "") {
         // handleErrors("error", "Enter Amount Needs Input");
@@ -201,12 +201,15 @@ btnConvertG.addEventListener("click", getGoldConversion);
 
 
 
-let btnClear = document.body.querySelector('.btnStartOver');
-let inputs = document.body.querySelector('.amountMetalFrom');
+let btnClearG = document.body.querySelector(".btnStartOverG");
+let inputGold = document.body.querySelector(".amountMetalFrom");
+let inputKarat = document.body.querySelector(".karatFrom");
 
-btnClear.addEventListener('click', () => {
-    
-    inputs.value = "";
+btnClearG.addEventListener('click', () => {
+    localStorage.getItem(".amountMetalFrom")
+    localStorage.getItem(".karatFrom")
+    inputKarat.value = "";
+    inputGold.value = "";
 });
 
 let btnClear1 = document.body.querySelector('#btnStartOver1');
@@ -216,5 +219,3 @@ btnClear1.addEventListener('click', () => {
     localStorage.getItem("amountBTC")
     inputs1.value = "";
 });
-
-
