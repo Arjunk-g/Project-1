@@ -170,12 +170,65 @@
         </div>
 
 
+        <!-- -----------------------------------------------------------------------TEST -->
 
+        <body>
+            <div class="jumbotron jumbotron-fluid bg">
+                <div class="container wordColor">
+                    <h1 class="display-4">Crypto Currencies To Metals</h1>
+                    <p class="lead">Converting Crypto Currency Values to Precious Metal Equivalents</p>
+                </div>
+            </div>
+            
+            <main>
+                
 
-<!-- add your converter boxes/divs above this save button and when everybody is all done delete this comment -->
-        <button id="saveBtn" class="saveBtn">Save Data</button>
-    </main>
-    <!--David's HTML ]-->
+              <h2 class="row justify-content-md-center align-items-center">Crypto Currencies To Precious Metals:</h2>
+                 <div  class="row justify-content-md-center align-items-center pic2">
+                 <div  class="col col-lg-2 country-from">
+                     
+                    <label id="fromLabel" class="fromLabel">FROM</label>
+                            
+                     <select id="currencyFrom" class="" name="countryFromOption">
+                              
+                    <option>BTC</option> <!--Bitcoin-->
+                    <option>ETH</option> <!--Ethereum-->
+                    <option>DOGE</option> <!--Dogecoin-->
+                    <option>LTC</option> <!--Litecoin-->
+                            
+                    </select>
+            
+            <input type="number" id="amountAG" class="amountCountryFrom" placeholder="Enter currency amount"></input>
+             
+            <button id="btnStartOver1" class="btnStartOver" type="button">Clear</button>
+        
+                        </div>
+                        <!--arrow-->
+                        <div class="col-md-auto arrow">
+                            <!-- code for arrow icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                              </svg>
+                        </div>
+                        
+         <div class="col col-lg-2 country-from">
+            <label id="toLabel" class="toLabel">TO</label>
+                <select id="currencyTo">
+                   
+                    <option>XAU</option> <!--Gold-->
+                    <option>XAG</option> <!--Silver-->
+                    <option>XPT</option> <!--Platinum-->
+                    <option>BTC</option> <!--Litecoin-->
+                    </select>
+                            
+                    <textarea id="coinURLAG" class="result" placeholder="Result goes here"></textarea>
+                            <button id="conversionButtonAG" class="conversionButtonAG">Convert</button>
+                        </div>
+                    </div>
+                </div>
+        
+<!-- End of Arjun's HTML -->
+
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>

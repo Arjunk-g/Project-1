@@ -11,15 +11,21 @@ var messageHandler = document.body.querySelector(".messageHandler");  //error ha
 //david's vars
 var countrySelection = document.body.querySelector(".countrySelection");  //Variable to select country
 var conversionAmount  = document.body.querySelector(".conversionAmount");
-var btnConvertG = document.body.querySelector(".btnConvertG");
+
 var amountBTC = document.body.querySelector("#amountBTC");
 var currencyFrom = document.body.querySelector("#currencyFrom"); 
 var currencyTo  = document.body.querySelector("#currencyTo");
+
 var btnConvertBTC = document.body.querySelector("#btnConvertBTC");
+
 var lsAmountBTC = localStorage.getItem("amountBTC");
 ///hyun's vars
 var amountMetalFrom = document.querySelector(".amountMetalFrom");
 //arjun's vars
+var conversionButtonAG = document.body.querySelector(".conversionButtonAG");
+
+var lsAmountAG = localStorage.getItem("amountAG");
+
 
 if(lsAmountBTC !== ""){
     amountBTC.value = lsAmountBTC;
@@ -131,6 +137,9 @@ function convertCurrencyBTC() {
 btnConvertBTC.addEventListener("click",convertCurrencyBTC);
 
 
+
+
+
 function getGoldApi(from, to, amount, metal) {
     var goldApiUrl = "https://www.goldapi.io/api/" + from + "/" + to + "/";
     var myHeaders = new Headers();
@@ -220,3 +229,41 @@ btnClear1.addEventListener('click', () => {
 });
 
 
+// -----------------------------------------------------------------------TEST
+
+if(lsAmountAG !== ""){
+    amountAG.value = lsAmountAG;
+}
+
+function coinToMetalConvertAG (to, from, amount) {
+    var coinURLAG = "https://rest.coinapi.io/v1/exchangerate/" + from + "/" + to + "/";
+
+var myHeadersAG = new Headers();
+
+myHeadersAG.append("X-CoinAPI-Key", "BBF13E38-D30A-4EEB-B578-98D0AAA17C71");
+myHeadersAG.append("Content-Type", "application/json");
+
+fetch(coinURLAG, {
+    method: 'GET',
+        headers: myHeadersAG,
+    redirect: 'follow'
+})
+.then(function (response) {
+return response.json()
+})
+.then(function (data) {
+var currencyConvertAG = amount * data.rate;
+document.body.querySelector("#coinURLAG").value = currencyConvertAG;   
+});
+}
+
+function conversionFunctionAG() {
+                    var to = currencyTo.options[currencyTo.selectedIndex].text;
+                    var from = currencyFrom.options[currencyFrom.selectedIndex].text;
+                    var amount = amountAG.value;
+
+    localStorage.setItem("amountAG", amount)
+    coinToMetalConvertAG(to, from, amount);
+}
+
+conversionButtonAG.addEventListener("click",conversionFunctionAG);
