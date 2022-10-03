@@ -2,9 +2,6 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   box-sizing: border-box;
 }
-li {
-  
-}
 
 body {
   margin: 0px;
@@ -184,15 +181,6 @@ button {
     margin-left: -15px;
 
 }
-
-
-
-.pic {
-    background-image: url(https://www.wallpaperbetter.com/wallpaper/318/957/187/gold-coin-widescreen-hd-1080P-wallpaper-middle-size.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 div.pic {
     padding: 20px;
 }
@@ -270,6 +258,8 @@ div {
   text-align: center;
   padding: 10px;
   border-radius: 5px;
+}
+
 footer {
   display: block;
   text-align: center;
@@ -282,3 +272,153 @@ footer {
   background-size: cover;
   background-position: center;
 }
+
+/** Hyun's CSS **/
+#hyuns-form h2 {
+  margin-bottom: 15px;
+}
+#hyuns-form {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding: 15px;
+  width: 100%;
+}
+.pic {
+  background-image: url(https://www.wallpaperbetter.com/wallpaper/318/957/187/gold-coin-widescreen-hd-1080P-wallpaper-middle-size.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.form-main {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  padding: 15px;
+  width: 100%;
+}
+/** BOX 1 **/
+.pic .country-from {
+  width: 20%;
+  height: auto;
+  background-color: rgba(151, 130, 7, 0.5);
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+.pic .country-from .metalFromOption {
+  width: 250px;
+  height: auto;
+  background-color: rgba(151, 130, 7, 0.7);
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+/** BOX 2 **/
+.pic .fromLabelHyuns {
+  width: 20%;
+  height: auto;
+  background-color: rgba(151, 130, 7, 0.5);
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+.pic .fromLabelHyuns .amountMetalFrom {
+  width: 250px;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(255, 248, 211, 0.5);
+  }
+  .pic .fromLabelHyuns .karatFrom {
+    width: 250px;
+    height: auto;
+    background-color: rgba(151, 130, 7, 0.7);
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 15px;
+  }
+/** BOX 3 **/
+.pic .arrow {
+  width: 20%;
+  height: auto;
+  background-color: rgba(151, 130, 7, 0.5);
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+.pic .arrow .arrow-this{
+  width: 20%;
+  height: auto;
+  background-color: rgba(151, 130, 7, 0.5);
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 15px;
+}
+.pic .arrow .btnStartOverG{
+  background-color: goldenrod;
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  padding: 5px 10px 5px 10px;
+}
+/** BOX 4 **/
+.pic .country-from {
+  width: 20%;
+  height: auto;
+  background-color: rgba(151, 130, 7, 0.5);
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+.pic .country-from .countryToOptionG {
+  width: 250px;
+  height: auto;
+  background-color: rgba(151, 130, 7, 0.7);
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 15px;
+}
+
+/** BOX 5 **/
+.pic .result-Hyuns {
+  width: 20%;
+  height: auto;
+  background-color: rgba(151, 130, 7, 0.5);
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+.pic .result-Hyuns .btnConvertG {
+  background-color: goldenrod;
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  padding: 5px 10px 5px 10px;
+  margin-bottom: 15px;
+}
+
+.pic .result-Hyuns .result  {
+  background-color: rgba(255, 248, 211, 0.5);
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  padding: 5px 10px 5px 10px;
+}
+
