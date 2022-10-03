@@ -2,6 +2,10 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   box-sizing: border-box;
 }
+li {
+  
+}
+
 body {
   margin: 0px;
 }
@@ -12,6 +16,11 @@ main {
 
 h1 {
   font-size: 36pt;
+  text-align: center;
+}
+
+p{
+  text-align: center;
 }
 
 .container-ndf {
@@ -114,6 +123,8 @@ h2 {
     color: goldenrod;
     background-color: black;
     margin-bottom: 0;
+    text-align: center;
+    
 }
 
 body  {
@@ -123,4 +134,17 @@ body  {
 
 div {
     color: goldenrod
+}
+
+footer {
+  display: block;
+  text-align: center;
+  color: goldenrod;
+}
+
+.picAG {
+  background-image: url(https://miro.medium.com/max/720/1*vS9rr8ROCubVVnOdLE6ERA.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
