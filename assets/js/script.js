@@ -61,7 +61,7 @@ function conversion(event) {
     // fetch("./assets/js/dummy.json")
         .then(response => response.json())  //creates json object
         .then(result => {
-            console.log(result.result);
+            //console.log(result.result);
             finalResult.innerHTML = result.result;
         })  //allows to use the JSON object data
         .catch(error => console.log('error', error));  //try catch    
