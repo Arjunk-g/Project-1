@@ -279,10 +279,6 @@ document.body.querySelector("#coinURLAG").value = currencyConvertAG;
 });
 }
 
-setTimeout(){
-
-
-
 function conversionFunctionAG() {
 var to = currencyToAG.options[currencyToAG.selectedIndex].text;
 var from = currencyFromAG.options[currencyFromAG.selectedIndex].text;
