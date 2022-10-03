@@ -70,6 +70,7 @@ function conversion() {
     // fetch("./assets/js/dummy.json")
         .then(response => response.json())  //creates json object
         .then(result => {
+            result.result = (Math.round(result.result*100)/100).toFixed(2);
             finalResult.innerHTML = result.result;
         })  //allows to use the JSON object data
         .catch(error => console.log('error', error));  //try catch    
@@ -171,7 +172,7 @@ function getGoldApi(from, to, amount, metal) {
         //goldConvert equals karats x amount in grams
         var goldConvert = goldData*amount;
         //get result element
-        var resultText = document.getElementById("result");
+        var resultText = document.getElementById("resultG");
         //if conversion equals 0,
         if(goldConvert === 0) {
             goldConvert = "Error: Not in Database";

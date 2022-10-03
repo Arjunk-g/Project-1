@@ -72,20 +72,24 @@
     <main>
         <div id="hyuns-form" class="container col-12"> 
             <h2 class="row justify-content-md-center align-items-center">Gold To Currency:</h2>
-            <div class="row justify-content-md-center align-items-center pic">
-                <div class="col col-lg-2 country-from">
-                    <label id="fromLabel" class="fromLabel">Metal</label>
+            <div class="form-main pic">
+                <!-- BOX 1 -->
+                <div class="country-from">
+                    <label id="fromLabel" class="fromLabel">Metal</label><br>
                     <!--metal dropdown-->
-                    <select id="metalFromOption" class="" name="metalFromOption">
+                    <select id="metalFromOption" class="metalFromOption" name="metalFromOption">
                       <!--metal options-->
                         <option>XAU</option>
                         <option>XAG</option>
                         <option>XPT</option>
                         <option>XPD</option>
                     </select>
+                </div> 
+                <!-- BOX 2 -->   
+                <div class="fromLabelHyuns">
                     <!--karat dropdown-->
                     <label id="fromLabel" class="fromLabel">FROM</label>
-                    <select id="karatFrom" class="" name="karatFrom">
+                    <select id="karatFrom" class="karatFrom" name="karatFrom">
                         <!--dropdown options-->
                           <option>18k</option>
                           <option>20k</option>
@@ -94,23 +98,24 @@
                           <option>24k</option>
                       </select>
                     <!--enter amount-->
-                    <input type="number" id="amountMetalFrom" class="amountMetalFrom" placeholder="Amount in grams">
-                    <!--reset-->
-                    <button id="btnStartOver" class="btnStartOver" type="button">Clear</button>  
+                    <input type="number" id="amountMetalFrom" class="amountMetalFrom" placeholder="Amount in grams"/>
+ 
                 </div>
-                
+                <!-- BOX 3 -->   
                 <!--arrow-->
-                <div class="col-md-auto arrow">
+                <div class="arrow">
                     <!-- code for arrow icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right arrow-this" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-                      </svg> 
+                    </svg><br>
+                    <!--reset-->
+                    <button id="btnStartOverG" class="btnStartOverG" type="button">Clear</button> 
                 </div>
-
-                <div class="col col-lg-2 country-from">
-                    <label id="toLabel" class="toLabel">TO</label>
+                <!-- BOX 4 -->   
+                <div class="country-from">
+                    <label id="toLabel" class="toLabel">TO</label><br>
                     <!--dropdown-->
-                    <select id="countryToOptionG" class="" name="countryToOptionG">
+                    <select id="countryToOptionG" class="countryToOptionG" name="countryToOptionG">
                         <!--dropdown options-->
                         <option>USD</option>
                         <option>EUR</option>
@@ -121,9 +126,11 @@
                         <option>MXN</option>
                         <option>BTC</option>
                     </select>
+                </div>
+                <div class="result-Hyuns">    
                     <!--result shown-->
-                    <textarea id="resultG" class="result" placeholder="Result goes here"></textarea>
                     <button id="btnConvertG" class="btnConvertG" type="button">Save & Convert</button>
+                    <textarea id="resultG" class="resultG" placeholder="Result goes here"></textarea>
                 </div>
             </div>
         </div>
