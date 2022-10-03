@@ -95,7 +95,7 @@ event.preventDefault(); //Added to keep persisitence on input
 
 
 
-// Start of David's Code*************************************************************************************************
+// Start of David's Code****************************************************************************************
 
 function getBTCConversionApi (to, from, amount) {
     var BTCApiUrl = "https://rest.coinapi.io/v1/exchangerate/" + from + "/" + to + "/";
@@ -210,7 +210,7 @@ function getGoldConversion() {
 btnConvertG.addEventListener("click", getGoldConversion);
 //End Hyun's getGoldAPI/getGoldConversion code *****************************************************
 
-//Hyun's clear button and local storage code
+//Hyun's clear button and local storage code *************************************************
 let btnClearGold = document.body.querySelector("#btnStartOverG");
 let inputGold = document.body.querySelector("#metalFromOption");
 let inputGrams = document.body.querySelector("#amountMetalFrom");
@@ -225,6 +225,9 @@ if(locStorKarat !== "") {
 }
 if(locStorMetalOption !== "") {
     goldFromOption.value = locStorMetalOption;
+}
+if(locStorCountryG !== "") {
+    countryToOptionG.value = locStorCountryG;
 }
 
 btnClearGold.addEventListener('click', () => {
