@@ -9,6 +9,10 @@ var btnStartOver = document.body.querySelector(".btnStartOver"); //button to sta
 var messageHandler = document.body.querySelector(".messageHandler");  //error handler
 var countrySelection = document.body.querySelector(".countrySelection");  //Variable to select country
 var conversionAmount  = document.body.querySelector(".conversionAmount");
+var locStrAmount_ndf = localStorage.getItem("amount");
+var locStrCountryFrom_ndf = localStorage.getItem("countryFromCurrency");
+var locStrCountryTo_ndf = localStorage.getItem("countryToCurrency");
+var locStrResult_ndf = localStorage.getItem("result");
 //david's vars
 var amountBTC = document.body.querySelector("#amountBTC");
 var currencyFrom = document.body.querySelector("#currencyFrom"); 
@@ -18,7 +22,7 @@ var lsAmountBTC = localStorage.getItem("amountBTC");
 var lsAmountCurrFrom = localStorage.getItem("currencyFrom");
 var lsAmountCurrTo = localStorage.getItem("currencyTo");
 ///hyun's vars
-var btnConvertG = document.querySelector(".btnConvertG");
+var btnConvertG = document.querySelector(".btnConvertG"); //make variables to grab elements
 var amountMetalFrom = document.querySelector(".amountMetalFrom");
 var goldFromOption = document.getElementById("metalFromOption"); 
 var countryToOptionG = document.getElementById("countryToOptionG");
@@ -39,7 +43,7 @@ if(lsAmountBTC !== ""){
 
 
 // ************************************** NDF - here we write the function to convert from *************** //
-function conversion(event) {
+function conversion() {
         var requestOptions;
         var myHeaders = new Headers();
         myHeaders.append("apikey", "LyHhxrDd4ojK6I1EtKoQCyL4l9PXDLHM");   //key pair
@@ -53,7 +57,12 @@ function conversion(event) {
     var fromCurrency_ndf = fromCurrency.options[fromCurrency.selectedIndex].text;
     var toCurrency_ndf = toCurrency.options[toCurrency.selectedIndex].text;
     var thisAmount = amount;
-    //console.log(fromCurrency_ndf, toCurrency_ndf, thisAmount);
+
+    // Sending input to local storage
+    localStorage.setItem("amount", thisAmount);
+    localStorage.setItem("fromCurrency", fromCurrency_ndf);
+    localStorage.setItem("toCurrency", toCurrency_ndf);
+    localStorage.setItem("finalresult", result);
 
     //original code from API below
     // fetch("https://api.apilayer.com/exchangerates_data/convert?to={to}&from={from}&amount={amount}", requestOptions)
@@ -61,46 +70,23 @@ function conversion(event) {
     // fetch("./assets/js/dummy.json")
         .then(response => response.json())  //creates json object
         .then(result => {
-            //console.log(result.result);
             finalResult.innerHTML = result.result;
         })  //allows to use the JSON object data
         .catch(error => console.log('error', error));  //try catch    
     
 };
 
-//This function creates a list fragment of the country codes
-function displayCurrencyCodesInOption() {
-    var select = document.querySelector('select');
-    var countryCodes = getCountrySymbols();
-    var fragment = new DocumentFragment();
-    //console.log(countryCodes);
-    for (var ccCodes in countryCodes) {
-        fragment += countryCodes.ccCodes + " ";
-        var option = document.createElement('option');
-}
-select.append(fragment);
-}
-
 //Creating an event listener for the Convert button
 btnConvert_ndf.addEventListener("click", function(event) {
-event.preventDefault(); //Added to keep persisitence on input
-
-//Amount to be converted entered here
-    var amount = document.querySelector("#amount").value;
-    
-  //select the country from conversion
-    var countryFrom = document.querySelector("countrySelection");
-    if (amount === "") {
-        // handleErrors("error", "Enter Amount Needs Input");
-    } else {
-        // handleErrors("success");
-        localStorage.setItem("amount", amount);
-        localStorage.setItem("fromCurrency", countryFrom);
-        conversion();
-    }
+    event.preventDefault(); //Added to keep persisitence on input   
+    var amount = document.querySelector("#amount").value; //Amount to be converted entered here
+    var countryFrom = document.querySelector("countrySelection"); //select the country from conversion
+    localStorage.setItem("amount", amount);
+    localStorage.setItem("fromCurrency", countryFrom);
+    conversion();
 });
-// END OF NORDLEENS CODE ***************************************************************************************
 
+// END OF NORDLEENS CODE ***************************************************************************************
 
 
 // Start of David's Code****************************************************************************************
