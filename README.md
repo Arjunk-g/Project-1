@@ -72,6 +72,7 @@ The following list was compiled using commonly used currencies in todays market:
 
 [GoldAPI]  (https://www.goldapi.io/)
 
+
 [Exchange Rates] - (https://exchangeratesapi.io/)
 
 [APILayer]  (https://apilayer.com/)
@@ -82,3 +83,5 @@ The following list was compiled using commonly used currencies in todays market:
 
 ## License
 [Refer to the MIT License in files]
+
+![HQSS](https://user-images.githubusercontent.com/112139137/193504564-39bfed59-8768-4c9c-876d-7e3d410718e6.PNG)
