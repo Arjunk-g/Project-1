@@ -81,4 +81,4 @@ The following list was compiled using commonly used currencies in todays market:
 [Bloomberg]  (https://www.bloomberg.com/markets/commodities/futures/metals)
 
 ## License
-[Place license type here]
+[Refer to the MIT License in files]
