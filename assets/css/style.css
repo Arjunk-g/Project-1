@@ -141,3 +141,10 @@ footer {
   text-align: center;
   color: goldenrod;
 }
+
+.picAG {
+  background-image: url(https://miro.medium.com/max/720/1*vS9rr8ROCubVVnOdLE6ERA.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
