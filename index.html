@@ -12,19 +12,19 @@
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" type="text/javascript" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Multi Currency Convertor</title>
+    <title>Multi-Currency Convertor</title>
+
 </head>
 <body>
     <div class="jumbotron jumbotron-fluid bg">
         <div class="container wordColor">
             <!--header-->
-            <h1 class="display-4">Value EXchange</h1>
-            <p class="lead">Converting Metals and Bitcoin to various world currencies.</p>
+            <h1 class="display-4">Gold to Currency</h1>
+            <p class="lead">Converting Gold and Bitcoin to various world currencies.</p>
         </div>
     </div>
-    <!--NDF's HTML [-->
     <main>
-        <div class="container-ndf"> 
+        <div class="container-ndf col-12"> 
             <h2 class="row justify-content-md-center align-items-center">Convert Currency to Currency</h2>
             <div class="thisDiv pic4">
                 <form class="thisForm">
@@ -67,12 +67,11 @@
             </div>
         </div>  
     </main>         
-    <!--NDF's HTML ]-->        
 
     <!--Hyun's HTML [-->
     <main>
         <div id="hyuns-form" class="container col-12"> 
-            <h2 class="row justify-content-md-center align-items-center">Metals to Currency:</h2>
+            <h2 class="row justify-content-md-center align-items-center">Gold To Currency:</h2>
             <div class="row justify-content-md-center align-items-center pic">
                 <div class="col col-lg-2 country-from">
                     <label id="fromLabel" class="fromLabel">Metal</label>
@@ -97,7 +96,7 @@
                     <!--enter amount-->
                     <input type="number" id="amountMetalFrom" class="amountMetalFrom" placeholder="Amount in grams">
                     <!--reset-->
-                    <button id="btnStartOverG" class="btnStartOverG" type="button">Clear</button>  
+                    <button id="btnStartOver" class="btnStartOver" type="button">Clear</button>  
                 </div>
                 
                 <!--arrow-->
@@ -124,7 +123,7 @@
                     </select>
                     <!--result shown-->
                     <textarea id="resultG" class="result" placeholder="Result goes here"></textarea>
-                    <button id="btnConvertG" class="btnConvertG" type="button">Convert</button>
+                    <button id="btnConvertG" class="btnConvertG" type="button">Save & Convert</button>
                 </div>
             </div>
         </div>
@@ -167,23 +166,79 @@
                       <option>BTC</option>
                       </select>
                     <textarea id="BTCresult" class="result" placeholder="Result goes here"></textarea>
-                    <button id="btnConvertBTC" class="btnConvert">Convert</button>
+                    <button id="btnConvertBTC" class="btnConvert">Save & Convert</button>
                 </div>
             </div>
         </div>
 
-
-
-
-<!-- add your converter boxes/divs above this save button and when everybody is all done delete this comment -->
-        <button id="saveBtn" class="saveBtn">Save Data</button>
     </main>
-    <!--David's HTML ]-->
+        
+    <!--Arjuns HTML Starts*****************************************************************************************-->
+
+    
+
+            <main>
+                
+
+                <div id="arjun-form" class="container col-12"> 
+                    <h2 class="row justify-content-md-center align-items-center">Crypto Currencies to Precious Metals:</h2>
+                    <div class="row justify-content-md-center align-items-center picAG">
+                        <div class="col col-lg-2 country-from">
+                     
+                    <label id="fromLabel" class="fromLabel">FROM</label>
+                            
+                     <select id="currencyFromAG" class="" name="countryFromOption">
+                              
+                    <option>BTC</option> <!--Bitcoin-->
+                    <option>ETH</option> <!--Ethereum-->
+                    <option>DOGE</option> <!--Dogecoin-->
+                    <option>LTC</option> <!--Litecoin-->
+                            
+                    </select>
+            
+            <input type="number" id="amountAG" class="amountCountryFrom" placeholder="Enter currency amount"></input>
+             
+            <button id="btnStartOver1" class="btnStartOver" type="button">Clear</button>
+        
+                        </div>
+                        <!--arrow-->
+                        <div class="col-md-auto arrow">
+                            <!-- code for arrow icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                              </svg>
+                        </div>
+                        
+         <div class="col col-lg-2 country-from">
+            <label id="toLabel" class="toLabel">TO</label>
+                <select id="currencyToAG">
+                   
+                    <option>XAU</option> <!--Gold-->
+                    <option>XAG</option> <!--Silver-->
+                    <option>XPT</option> <!--Platinum-->
+                    </select>
+                            
+                    <textarea id="coinURLAG" class="result" placeholder="Result goes here"></textarea>
+                            <button id="conversionButtonAG" class="conversionButtonAG">Convert</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+<!-- End of Arjun's HTML -->
+
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="https://coinconvert.net/assets/js/crypto-convert.min.js"></script>
     <script src="./assets/js/script.js"></script>
+
+<footer>
+    <p>Site Created by: Nordleen De Frias, David Hall, Hyun Wook Choi, Arjun Gupta<br>
+        <a href="https://github.com/Arjunk-g/Project-1">Repository</a>
+        <a href="https://docs.google.com/presentation/d/10YL9bAGP68W_saaZACVV1k5pJx8Sqd-LoM5dubi2BJ0/edit#slide=id.p">PowerPoint-Presentation</a>
+    
+</footer>
 </body>
+
 </html>

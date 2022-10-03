@@ -1,5 +1,4 @@
 //Global Variables
-
 //NDF - vars
 var amount = document.body.querySelector(".amount");  //Variable holding the input amount to be converted
 var fromCurrency = document.body.querySelector("#countryFromCurrency");  //Variable to select currency we are converting from
@@ -20,14 +19,28 @@ var currencyFrom = document.body.querySelector("#currencyFrom");
 var currencyTo  = document.body.querySelector("#currencyTo");
 var btnConvertBTC = document.body.querySelector("#btnConvertBTC");
 var lsAmountBTC = localStorage.getItem("amountBTC");
+var lsAmountCurrFrom = localStorage.getItem("currencyFrom");
+var lsAmountCurrTo = localStorage.getItem("currencyTo");
 ///hyun's vars
 var btnConvertG = document.querySelector(".btnConvertG"); //make variables to grab elements
 var amountMetalFrom = document.querySelector(".amountMetalFrom");
 var goldFromOption = document.getElementById("metalFromOption"); 
-var countryToOption = document.getElementById("countryToOptionG");
+var countryToOptionG = document.getElementById("countryToOptionG");
 var amountMetal = document.getElementById("amountMetalFrom");
 var karatFrom = document.getElementById("karatFrom");
+var locStorMetalGrams = localStorage.getItem("amountMetalFrom");
+var locStorKarat = localStorage.getItem("karatFrom");
+var locStorMetalOption = localStorage.getItem("metalFromOption");
+var locStorCountryG = localStorage.getItem("countryToOptionG");
 //arjun's vars
+var conversionButtonAG = document.body.querySelector(".conversionButtonAG");
+var currencyFromAG = document.body.querySelector("#currencyFromAG"); 
+var currencyToAG  = document.body.querySelector("#currencyToAG");
+
+if(lsAmountBTC !== ""){
+    amountBTC.value = lsAmountBTC;
+}
+
 
 // ************************************** NDF - here we write the function to convert from *************** //
 function conversion() {
@@ -60,6 +73,7 @@ function conversion() {
             finalResult.innerHTML = result.result;
         })  //allows to use the JSON object data
         .catch(error => console.log('error', error));  //try catch    
+    
 };
 
 //Creating an event listener for the Convert button
@@ -73,6 +87,9 @@ btnConvert_ndf.addEventListener("click", function(event) {
 });
 
 // END OF NORDLEENS CODE ***************************************************************************************
+
+
+// Start of David's Code****************************************************************************************
 
 function getBTCConversionApi (to, from, amount) {
     var BTCApiUrl = "https://rest.coinapi.io/v1/exchangerate/" + from + "/" + to + "/";
@@ -99,14 +116,14 @@ fetch(BTCApiUrl, {
 
 function convertCurrencyBTC() {
     var to = currencyTo.options[currencyTo.selectedIndex].text;
-    
 
     var from = currencyFrom.options[currencyFrom.selectedIndex].text;
-    
 
     var amount = amountBTC.value;
 
-    localStorage.setItem("amountBTC", amount)
+    localStorage.setItem("amountBTC", amount);
+    localStorage.setItem("currencyFrom", from);
+    localStorage.setItem("currencyTo", to);
 
     getBTCConversionApi(to, from, amount);
 
@@ -115,6 +132,9 @@ function convertCurrencyBTC() {
 btnConvertBTC.addEventListener("click",convertCurrencyBTC);
 
 
+
+
+//Hyun's getGoldAPI code *********************************************************************
 function getGoldApi(from, to, amount, metal) {
     var goldApiUrl = "https://www.goldapi.io/api/" + from + "/" + to + "/";
     var myHeaders = new Headers();
@@ -151,7 +171,7 @@ function getGoldApi(from, to, amount, metal) {
         //goldConvert equals karats x amount in grams
         var goldConvert = goldData*amount;
         //get result element
-        var resultText = document.getElementById("resultG");
+        var resultText = document.getElementById("result");
         //if conversion equals 0,
         if(goldConvert === 0) {
             goldConvert = "Error: Not in Database";
@@ -167,14 +187,152 @@ function getGoldApi(from, to, amount, metal) {
 }
 
 function getGoldConversion() {
+    //make variable to get elements
+    var goldFromOption = document.getElementById("metalFromOption"); 
+    var countryToOption = document.getElementById("countryToOptionG");
+    var amountMetal = document.getElementById("amountMetalFrom");
+    var karatFrom = document.getElementById("karatFrom");
+
     //set text from grabbed elements
     var goldFromText = goldFromOption.options[goldFromOption.selectedIndex].text; 
-    var countryToText = countryToOption.options[countryToOption.selectedIndex].text;
+    var countryToText = countryToOptionG.options[countryToOptionG.selectedIndex].text;
     var amountMetalText = amountMetal.value;
     var karatFromText = karatFrom.value;
+
+    //set item's local storage value to element name
+    localStorage.setItem("amountMetalFrom", amountMetalText);
+    localStorage.setItem("karatFrom", karatFromText);
+    localStorage.setItem("metalFromOption", goldFromText);
+    localStorage.setItem("countryToOptionG", countryToText);
 
     //call getGoldApi with parameters (metal dropdown, currency dropdown, metal in grams, karat of metal)
     getGoldApi(goldFromText, countryToText, amountMetalText, karatFromText); 
 }
 
 btnConvertG.addEventListener("click", getGoldConversion);
+//End Hyun's getGoldAPI/getGoldConversion code *****************************************************
+
+//Hyun's clear button and local storage code *************************************************
+let btnClearGold = document.body.querySelector("#btnStartOverG");
+let inputGold = document.body.querySelector("#metalFromOption");
+let inputGrams = document.body.querySelector("#amountMetalFrom");
+let inputKarat = document.body.querySelector("#karatFrom");
+let inputCountryG = document.body.querySelector("#countryToOptionG");
+
+if(locStorMetalGrams !== "") {
+    amountMetalFrom.value = locStorMetalGrams;
+}
+if(locStorKarat !== "") {
+    karatFrom.value = locStorKarat;
+}
+if(locStorMetalOption !== "") {
+    goldFromOption.value = locStorMetalOption;
+}
+if(locStorCountryG !== "") {
+    countryToOptionG.value = locStorCountryG;
+}
+
+btnClearGold.addEventListener('click', () => {
+    localStorage.removeItem("amountMetalFrom");
+    localStorage.removeItem("karatFrom");
+    localStorage.removeItem("metalFromOption");
+    localStorage.removeItem("countryToOptionG");
+    inputGold.value = "";
+    inputGrams.value = "";
+    inputKarat.value = "";
+    inputCountryG.value = "";
+});
+// End of Hyun's LocStorageCode***********************************************************************
+
+
+// Davids Button Clear Local Storage******************************************************************
+
+let btnClear = document.body.querySelector('.btnStartOver');
+let inputs = document.body.querySelector('.amountMetalFrom');
+
+btnClear.addEventListener('click', () => {
+    
+    inputs.value = "";
+});
+
+let btnClear1 = document.body.querySelector('#btnStartOver1');
+let inputs1 = document.body.querySelector('#amountBTC');
+let inputsCurFrom = document.body.querySelector('#currencyFrom');
+let inputsCurTo = document.body.querySelector('#currencyTo');
+
+
+btnClear1.addEventListener('click', () => {
+    localStorage.removeItem("amountBTC");
+    localStorage.removeItem("currencyFrom");
+    localStorage.removeItem("currencyTo");
+    inputs1.value = "";
+});
+
+// End of Davids Button Clear Local Storage******************************************************************
+
+
+// -Arjun's Javascript
+
+function coinToMetalConvertAG (to, from, amount) {
+    var goldApiUrl = "https://www.goldapi.io/api/" + to + "/" + "USD" + "/";
+    var myHeaders = new Headers();
+    var metalData;
+
+    myHeaders.append("x-access-token", "goldapi-1un118l8lqe0hm-io");
+    myHeaders.append("Content-Type", "application/json");
+    
+    fetch(goldApiUrl, {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow',
+    })
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        console.log(data);
+        metalData = data.price;
+        //conditional for karats
+        //if metal parameter equals the string of 18k (dropdown choice)
+        });
+
+    var coinURLAG = "https://rest.coinapi.io/v1/exchangerate/" + from + "/" + 'USD' + "/";
+
+var myHeadersAG = new Headers();
+
+myHeadersAG.append("X-CoinAPI-Key", "06FA578A-BD51-4D62-8BE1-3950D9693466");
+myHeadersAG.append("Content-Type", "application/json");
+
+fetch(coinURLAG, {
+    method: 'GET',
+        headers: myHeadersAG,
+    redirect: 'follow'
+})
+.then(function (response) {
+return response.json()
+})
+.then(function (data) {
+console.log(data);
+var currencyConvertAG = (data.rate * amount) / metalData;
+document.body.querySelector("#coinURLAG").value = currencyConvertAG;   
+});
+}
+if(lsAmountCurrFrom !== "") {
+    currencyFrom.value = lsAmountCurrFrom;
+}
+if(lsAmountCurrTo !== "") {
+    currencyTo.value = lsAmountCurrTo;
+}
+
+function conversionFunctionAG() {
+var to = currencyToAG.options[currencyToAG.selectedIndex].text;
+var from = currencyFromAG.options[currencyFromAG.selectedIndex].text;
+var amount = amountAG.value;
+
+    localStorage.setItem("amountAG", amount)
+    coinToMetalConvertAG(to, from, amount);
+}
+
+
+conversionButtonAG.addEventListener("click",conversionFunctionAG);
+
