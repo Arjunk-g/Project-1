@@ -46,7 +46,7 @@ function conversion(event) {
     var fromCurrency_ndf = fromCurrency.options[fromCurrency.selectedIndex].text;
     var toCurrency_ndf = toCurrency.options[toCurrency.selectedIndex].text;
     var thisAmount = amount;
-    console.log(fromCurrency_ndf, toCurrency_ndf, thisAmount);
+    //console.log(fromCurrency_ndf, toCurrency_ndf, thisAmount);
 
     //original code from API below
     // fetch("https://api.apilayer.com/exchangerates_data/convert?to={to}&from={from}&amount={amount}", requestOptions)
