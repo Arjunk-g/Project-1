@@ -16,26 +16,106 @@ h1 {
 
 .container-ndf {
   display: flex;
-  justify-content:space-around;
-  gap: 0.5rem;
+  justify-content: space-evenly;
   flex-direction: column;
-  border: solid black 1px;
   padding: 15px;
   width: 100%;
 }
-.container-ndf .currency-value {
-  width: 25%;
+.container-ndf h2 {
+  margin-bottom: 15px;
 }
-.container-ndf .country-from {
-  width: 25%;
+.container-ndf .thisDiv .thisForm {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 150px;
 }
-.container-ndf .country-to {
-  width: 25%;
+/** box-01 **/
+.container-ndf .thisDiv .thisForm .currency-value {
+  width: 20%;
+  height: auto;
+  background-color: rgba(151, 130, 7, 0.5);
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
 }
-.container-ndf .convert-to {
-  width: 25%;
+.container-ndf .thisDiv .thisForm .currency-value .amount {
+width: 250px;
+font-size: 14px;
+padding: 10px;
+border-radius: 5px;
+border: none;
+background-color: rgba(255, 248, 211, 0.5);
 }
 
+/** box-02 **/
+.container-ndf .thisDiv .thisForm .country-from {
+  width: 20%;
+  height: auto;
+  background-color: rgba(151, 130, 7, 0.5);
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+.container-ndf .thisDiv .thisForm .country-from #countryFromCurrency {
+  width: 250px;
+  height: auto;
+  background-color: rgba(151, 130, 7, 0.7);
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+.container-ndf .thisDiv .thisForm .country-from #countryFromCurrency:hover {
+  background-color: #000000;
+}
+/** box-03 **/
+.container-ndf .thisDiv .thisForm .country-to {
+  width: 20%;
+  height: auto;
+  background-color: rgba(151, 130, 7, 0.5);
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+.container-ndf .thisDiv .thisForm .country-to #countryToCurrency {
+  width: 250px;
+  height: auto;
+  background-color: rgba(151, 130, 7, 0.7);
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+.container-ndf .thisDiv .thisForm .country-to #countryToCurrency:hover {
+  background-color: #000000;
+}
+/** box-04 **/
+.container-ndf .thisDiv .thisForm .convert-to {
+  width: 20%;
+  height: auto;
+  background-color: rgba(151, 130, 7, 0.5);
+  color: #ffffff;
+  text-align: left;
+  padding: 10px;
+  border-radius: 5px;
+}
+.container-ndf .thisDiv .thisForm .convert-to .btnConvert-ndf {
+  background-color: goldenrod;
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  padding: 5px 10px 5px 10px;
+}
+.container-ndf .thisDiv .thisForm .convert-to .btnConvert-ndf:hover {
+  background-color: #000000;
+}
+/** Container 2 - NDF **/
 .container-ndf-2 {
   display: flex;
   gap: 0.5rem;
@@ -44,11 +124,20 @@ h1 {
   margin: 10px;
   align-items: flex-start;
 }
+.container-ndf-2 .messageHandler {
+  color: #ffffff;
+  background-color: rgba(151, 130, 7, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+}
 .pic4 {
   background-image: url(https://miro.medium.com/max/720/1*vS9rr8ROCubVVnOdLE6ERA.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+@media screen and (max-width: 992px) {
+
 }
 
 button {
@@ -123,4 +212,51 @@ body  {
 
 div {
     color: goldenrod
+}
+
+/** Davids Part **/
+.davs-form {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.davs-form h2{
+  margin-bottom: 15px;
+}
+.davs-form .cont1 {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding: 15px;
+  width: 100%;
+}
+.davs-form .cont1 .country-from {
+  width: 33%;
+  height: auto;
+  background-color: rgba(151, 130, 7, 0.5);
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.davs-form .cont1 .arrow {
+  width: 33%;
+  height: auto;
+  background-color: rgba(151, 130, 7, 0.5);
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+.davs-form .cont1 .country-from {
+  width: 33%;
+  height: auto;
+  background-color: rgba(151, 130, 7, 0.5);
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
 }

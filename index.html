@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This website is a financial tool for currency, precious metals, and bitcoin conversion. It uses exchange rates information delivered at real time to convert from metal to currency, currency to currency, and from currency to cryptocurrency. It uses as a currency converter the most commonly national, sub-national, and supra national currencies as well as the most used cryptocurrencies.">
+    <meta name="keywords" content="currency converter, currency, crypto, gold, metals, exchange rates">
+    <meta name="author" content="Group 5">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" type="text/javascript" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Value EXchange </title>
-
+    <title>Multi Currency Convertor</title>
 </head>
 <body>
     <div class="jumbotron jumbotron-fluid bg">
@@ -24,15 +26,15 @@
     <main>
         <div class="container-ndf"> 
             <h2 class="row justify-content-md-center align-items-center">Convert Currency to Currency</h2>
-            <div class="row justify-content-md-center align-items-center pic4">
-                <form class="row justify-content-md-center align-items-center">
+            <div class="thisDiv pic4">
+                <form class="thisForm">
                     <!-- COUNTRY FROM SECTION -->
-                    <div class="currency-value">
-                        <label id="valueLabel" class="valueLabel">VALUE: </label>
+                    <div class="currency-value"> <!--BOX 1-->
+                        <label id="valueLabel" class="valueLabel">Value</label>
                         <input type="number" id="amount" class="amount" placeholder="Enter Your Value" />
                     </div>
-                    <div class="country-from">
-                        <label id="fromLabel" class="fromlabel">FROM: </label>
+                    <div class="country-from"><!--BOX 2-->
+                        <label id="fromLabel" class="fromlabel">From</label>
                         <select id="countryFromCurrency" name="countryFrom">
                             <option class="fromCurrency">USD</option>
                             <option class="fromCurrency">EUR</option>
@@ -43,9 +45,9 @@
                     </div>
                     
                     <!-- COUNTRY TO SECTION -->
-                    <div class="country-to">
-                        <label id="toLabel" class="toLabel">TO: </label><br>
-                        <select id="countryToCurrency" class="" name="to">                    
+                    <div class="country-to"><!--BOX 3-->
+                        <label id="toLabel" class="toLabel">To</label>
+                        <select id="countryToCurrency" class="countryToCurrency" name="to">                    
                             <option class="toCurrency">USD</option>
                             <option class="toCurrency">EUR</option>
                             <option class="toCurrency">GBP</option>
@@ -53,14 +55,14 @@
                             <option class="toCurrency">JPY</option>
                         </select>
                     </div>
-                    <div class="convert-to">
-                        <button id="btnConvert-ndf" class="btnConvert-ndf" type="button">Convert</button><br>
-                        <output id="result" class="result" placeholder="Result goes here">RESULT: </output>
+                    <div class="convert-to"><!--BOX 4-->
+                        <button id="btnConvert-ndf" class="btnConvert-ndf" type="button">Convert</button>
+                        <output id="result" class="result" placeholder="Result goes here">Result</output>
                     </div>
                 </form>
                         <!-- MESSAGE HANDLER -->
                 <div class="container-ndf-2 col-12 arrow justify-content-md-center align-items-center"> 
-                    <div id="messageHandler" class="messageHandler">ERRORS DISPLAY HERE -MSG:</div>
+                    <div id="messageHandler" class="messageHandler"></div>
                 </div>
             </div>
         </div>  
@@ -145,7 +147,6 @@
                     </select>
                     <input type="number" id="amountBTC" class="amountCountryFrom" placeholder="Enter currency amount"></input>
                     <button id="btnStartOver1" class="btnStartOver" type="button">Clear</button>
-
                 </div>
                 
                 <!--arrow-->
