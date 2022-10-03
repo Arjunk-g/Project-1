@@ -9,32 +9,28 @@
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" type="text/javascript" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Multi-Currency Converter</title>
+    <title>Value EXchange </title>
 
 </head>
 <body>
-<ul>
-    
     <div class="jumbotron jumbotron-fluid bg">
         <div class="container wordColor">
             <!--header-->
-            <h1 class="display-4">Value EXchange</h1>
-            <p class="lead">Converting Metals and Bitcoin to various world currencies.</p>
+            <h1 class="display-4">Gold to Currency</h1>
+            <p class="lead">Converting Gold and Bitcoin to various world currencies.</p>
         </div>
     </div>
-    <!--NDF's HTML [-->
-    <li>
-         <main>
-        <div class="container-ndf"> 
+    <main>
+        <div class="container-ndf col-12"> 
             <h2 class="row justify-content-md-center align-items-center">Convert Currency to Currency</h2>
-            <div class="row justify-content-md-center align-items-center pic4">
+            <div class="row justify-content-md-center align-items-center">
                 <form class="row justify-content-md-center align-items-center">
                     <!-- COUNTRY FROM SECTION -->
-                    <div class="currency-value">
+                    <div class="col col-lg-3 currency-value">
                         <label id="valueLabel" class="valueLabel">VALUE: </label>
                         <input type="number" id="amount" class="amount" placeholder="Enter Your Value" />
                     </div>
-                    <div class="country-from">
+                    <div class="col col-lg-3 country-from">
                         <label id="fromLabel" class="fromlabel">FROM: </label>
                         <select id="countryFromCurrency" name="countryFrom">
                             <option class="fromCurrency">USD</option>
@@ -46,7 +42,7 @@
                     </div>
                     
                     <!-- COUNTRY TO SECTION -->
-                    <div class="country-to">
+                    <div class="col col-lg-3 country-to">
                         <label id="toLabel" class="toLabel">TO: </label><br>
                         <select id="countryToCurrency" class="" name="to">                    
                             <option class="toCurrency">USD</option>
@@ -56,8 +52,8 @@
                             <option class="toCurrency">JPY</option>
                         </select>
                     </div>
-                    <div class="convert-to">
-                        <button id="btnConvert-ndf" class="btnConvert-ndf" type="button">Convert</button><br>
+                    <div class="col col-lg-3 country-to">
+                        <button id="btnConvert" class="btnConvert-ndf" type="button">Convert</button><br>
                         <output id="result" class="result" placeholder="Result goes here">RESULT: </output>
                     </div>
                 </form>
@@ -67,16 +63,12 @@
                 </div>
             </div>
         </div>  
-    </main>  
-    </li>       
-    <!--NDF's HTML ]-->        
+    </main>         
 
-    
     <!--Hyun's HTML [-->
-    <li>
     <main>
         <div id="hyuns-form" class="container col-12"> 
-            <h2 class="row justify-content-md-center align-items-center">Metals to Currency:</h2>
+            <h2 class="row justify-content-md-center align-items-center">Gold To Currency:</h2>
             <div class="row justify-content-md-center align-items-center pic">
                 <div class="col col-lg-2 country-from">
                     <label id="fromLabel" class="fromLabel">Metal</label>
@@ -101,7 +93,7 @@
                     <!--enter amount-->
                     <input type="number" id="amountMetalFrom" class="amountMetalFrom" placeholder="Amount in grams">
                     <!--reset-->
-                    <button id="btnStartOverG" class="btnStartOverG" type="button">Clear</button>  
+                    <button id="btnStartOver" class="btnStartOver" type="button">Clear</button>  
                 </div>
                 
                 <!--arrow-->
@@ -127,23 +119,21 @@
                         <option>BTC</option>
                     </select>
                     <!--result shown-->
-                    <textarea id="resultG" class="result" placeholder="Result goes here"></textarea>
+                    <textarea id="result" class="result" placeholder="Result goes here"></textarea>
                     <button id="btnConvertG" class="btnConvertG" type="button">Convert</button>
                 </div>
             </div>
         </div>
     </main>
-</li>
     <!--Hyun's HTML ]-->
     
     <!--David's HTML [-->
-<li>
     <main>
         <!-- <h1 class="goldFont">Currency To Bitcoin<span class="badge badge-secondary"></span></h1> -->
-        <div class="container col-12"> 
+        <div id="davs-form" class="container col-12"> 
             <h2 class="row justify-content-md-center align-items-center">Currency To Bitcoin:</h2>
-            <div class="row justify-content-md-center align-items-center pic2">
-                <div class="col col-lg-2 country-from">
+            <div  class="row justify-content-md-center align-items-center pic2">
+                <div  class="col col-lg-2 country-from">
                     <label id="fromLabel" class="fromLabel">FROM</label>
                     <select id="currencyFrom" class="" name="countryFromOption">
                       <option>USD</option>
@@ -180,16 +170,16 @@
         </div>
 
     </main>
-</li>
-        <!--Arjun's HTML -->
+        <!-- -----------------------------------------------------------------------TEST -->
 
-  <li>    
-    <main>
-   
-                    <div class="container col-12"> 
-                        <h2 class="row justify-content-md-center align-items-center">Crypto Currencies To Precious Metals:</h2>
-                        <div class="row justify-content-md-center align-items-center pic2">
-                            <div class="col col-lg-2 country-from">
+        <body>
+
+            <main>
+                
+
+              <h2 class="row justify-content-md-center align-items-center">Crypto Currencies To Precious Metals:</h2>
+                 <div  class="row justify-content-md-center align-items-center pic2">
+                 <div  class="col col-lg-2 country-from">
                      
                     <label id="fromLabel" class="fromLabel">FROM</label>
                             
@@ -229,10 +219,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-     </main>
-  </li>
- </ul>  
+            </main>
 <!-- End of Arjun's HTML -->
 
     
